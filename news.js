@@ -34,6 +34,17 @@ const displayNews = (data) => {
     });
 }
 
+function addSpinner(button) {
+    button.innerHTML = '<span class="spinner"><i class="fa fa-spinner fa-spin"></span>';
+    button.disabled = true;
+}
+
+// Function to remove the spinner and reset button text
+function removeSpinner(button) {
+    button.innerHTML = 'Get News';
+    button.disabled = false;
+}
+
 // Fetch and display news for the default location (Georgia) on page load
 NewsApi()
     .then(displayNews)
@@ -44,16 +55,23 @@ NewsApi()
 // Event listener for the "Get News" button
 document.getElementById('fetch-location-news-btn').addEventListener('click', () => {
     const locationInput = document.getElementById('location-news').value.trim();
+    const button = document.getElementById('fetch-location-news-btn');
 
     if (locationInput) {
+        // Add spinner when fetching starts
+        addSpinner(button);
+
         // Fetch and display news based on user input
         NewsApi(locationInput)
-            .then(displayNews)
+            .then((data) => {
+                displayNews(data);
+                removeSpinner(button);  // Remove spinner after data is fetched
+            })
             .catch(() => {
-                console.log('Fetching error')
+                console.log('Fetching error');
+                removeSpinner(button);  // Remove spinner even if there's an error
             });
     } else {
-        // If the input is empty, show a message or handle accordingly
         console.log('Please enter a valid location');
     }
 });

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="melistyles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+</head>
+<body>
+    <header>
+        <div class="header-div">
+            <div class="logodiv">
+                <p>NEWS</p>
+            </div>
+            <nav>
+                <a href="">Home</a>
+                <div class="news-holder">
+                    <a href="">News<ion-icon name="chevron-down-outline"></ion-icon></a>
+                    <div class="news-types">
+                        <ul class="news-ul">
+                            <li>Nasa Daily</li>
+                            <li>Sports</li>
+                            <li>Market Sales</li>
+                            <li>Blogs</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <a href="weather.html">Weather</a>
+                <a href="news.html">Locational News</a>
+                <a href="">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="map-container">
+            <div id="map"></div>
+        </section>
+        <section id="location-search">
+            <label for="location">Search for the location</label>
+            <input type="text" name="location" id="location" placeholder="Enter location:">
+            <button id="fetch-weather-btn">Get Weather</button>
+        </section>
+        <section id="location-weather">
+            <div id="current-weather">
+                <div id="first-div">
+                    <img id="current-weather-icon" src="" alt="">
+                    <p id="current-weather-temp"></p>
+                    <p id="current-descrp"></p>
+                </div>
+                <div id="second-div">
+                    <p id="current-location"></p>
+                    <p id="current-weather-date"></p>
+                    <p id="currentTemps">
+                        <span id="min"></span>
+                        <span id="max"></span>
+                    </p>
+                    <p id="current-wind"></p>
+                </div>
+            </div>
+            <div id="daily-div">
+                <h2>Daily Weather</h2>
+                <div id="daily-weather-div">
+
+                </div>
+            </div>
+            <div id="hourly-div">
+                <h2>Hourly Weather</h2>
+                <div id="houly-weather-div">
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="weather.js"></script>
+</body>
+</html>

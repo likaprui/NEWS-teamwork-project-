@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+    height: 250px;
+    border: 1px solid white;
+    margin-inline: auto;
+}
+
+@keyframes scroll {
+    to {
+        left: -200px;
+    }
+}
+
+.item {
+    background-color: brown;
+    position: absolute;
+    width: 210px;
+    height: 250px;
+    left: 100%;
+    animation-name: scroll;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.item1 {
+    animation-delay: calc(10s / 3 * 0);
+}
+
+.item2 {
+    animation-delay: calc(10s / 3 * 1);
+}
+
+.item3 {
+    animation-delay: calc(10s / 3 * 2);
+}

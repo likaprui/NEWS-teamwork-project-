@@ -13,13 +13,6 @@ aContact.addEventListener("click", ()=>{
 
 
 
-
-
-
-
-
-
-
 let img = document.getElementById("mainSliderImg")
 let i=0
 let pics = ["slider-img/ppl.png", "slider-img/office.png", "slider-img/magazine.jpg", "slider-img/social.png"]

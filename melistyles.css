@@ -327,7 +327,7 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(190, 214, 247, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
     color: #000000;
     box-shadow: 0 0 20px rgb(170, 252, 241);
     letter-spacing: 1.3px;

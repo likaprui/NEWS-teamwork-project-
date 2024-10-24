@@ -12,11 +12,12 @@
             <div class="logodiv">
                 <p>NEWS</p>
             </div>
+            <ion-icon id="menu" name="grid-outline"></ion-icon>
             <nav>
                 <a href="">Home</a>
                 <div class="news-holder">
-                    <a href="">News<ion-icon name="chevron-down-outline"></ion-icon></a>
-                    <div class="news-types">
+                    <a id="news-a">News<ion-icon name="chevron-down-outline"></ion-icon></a>
+                    <div class="news-types" id="news-types">
                         <ul class="news-ul">
                             <li>Nasa Daily</li>
                             <li>Sports</li>
@@ -27,13 +28,64 @@
                     
                 </div>
                 
-                <a href="">Weather</a>
-                <a href="">Locational News</a>
-                <a href="">Contact</a>
+                <a href="weather.html">Weather</a>
+                <a href="news.html">Locational News</a>
+                <a href="#" id="a-contact">Contact</a>
             </nav>
         </div>
     </header>
+
+    <!-- <hr width="100%" style="margin-top: 1020px; border: 1px solid black; font-weight: 800; position: absolute; z-index: -1;"> -->
+
     <main>
+
+        <section class="contact-page">
+            <div class="imgDiv"><img src="socials/contact-img.png"></div>
+            
+            <div class="contact">
+                <h1 class="h1">Contact Us</h1>
+                <div class="container">
+                    <form>
+                        <div class="input-box"><input type="text" placeholder="Full Name"><i></i></div>
+                        <div class="input-box"><input type="text" placeholder="E-mail"><i></i></div>
+                        <div class="input-box"><input type="text" placeholder="Message"><i></i></div>
+                        <input type="button" value="Contact Us">
+                    </form>
+                </div>
+    
+                
+            </div>
+            <div class="contact-info">
+                        <div class="info-detalize">
+                            <div>
+                                <h2><b>Contact</b></h2>
+                                <h2>News@gmail.com</h2>
+                            </div>
+    
+                            <div>
+                                <h2><b>Based in</b></h2>
+                                <h2>Los Angeles, California</h2>
+                            </div>
+                        </div>
+    
+                        <div class="socials">
+                            <span>
+                                <img src="socials/Facebook - Negative.png" alt="">
+                            </span>
+    
+                            <span>
+                                <img src="socials/Instagram - Negative.png" alt="">
+                            </span>
+    
+                            <span>
+                                <img src="socials/Vector.png" alt="">
+                            </span>
+                        </div>
+    
+                    </div>
+            <div></div>
+        </section>
+
 
         <div class="main-slider">
             <img src="slider-img/social.png" alt="" width="100%" height="100%" id="mainSliderImg">
@@ -50,7 +102,7 @@
             </div>
         </div>
 
-        <section>
+        <section class="home-section">
             
             <div class="grid-example">
                 <div class="griddiv" id="grid-div1">
@@ -59,8 +111,10 @@
                 <div class="griddiv" id="grid-div2">
 
                 </div>
-                <div class="griddiv" id="grid-div3">
-
+                <div class="griddiv" id="grid-div3"> 
+                        <h2 class="item item1">EVERYTHING YOU</h2>
+                        <h2 class="item item2">NEED TO KNOW</h2>
+                        <h2 class="item item3">ALL IN ONE PLACE</h2>
                 </div>
                 <div class="griddiv" id="grid-div4">
 
@@ -70,42 +124,118 @@
             <div class="title"><h2>About All</h2><div class="line"></div></div>
 
             <div class="about">
+                <hr style="border-color: black;">
                 <div class="about-div">
                     <div class="info-boxs">
-
+                        <h2 class="h2">Lorem ipsum dolor sit amet</h2>
                     </div>
                     <div class="info-boxs">
-
+                        <h2 class="h2"></h2>
                     </div>
                     <div class="info-boxs">
-
+                        <h2 class="h2"></h2>
                     </div>
                     <div class="info-boxs">
+                        <h2 class="h2"></h2>
+                    </div>
 
+                    <div class="info-boxs">
+                        <h2 class="h2"></h2>
+                    </div>
+
+                    <div class="info-boxs">
+                        <h2 class="h2"></h2>
+                    </div>
+
+                    <div class="info-boxs">
+                        <h2 class="h2"></h2>
                     </div>
 
                 </div>
 
                 <div class="news">
                     
-                    <div class="news-divs"></div>
-                    <div class="news-divs"></div>
-                    <div class="news-divs"></div>
-                    <div class="news-divs"></div>
-                    <div class="news-divs"></div>
-                    <div class="news-divs"></div>
-                    <div class="news-divs"></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+                    <div class="news-divs"><h3 class="h22"></h3></div>
+
                 </div>
             </div>
         </section>
 
     </main>
-    <footer>
-        <div class="footerdiv">
-
-        </div>
-    </footer>
+    <hr width="100%" style="margin-bottom: 100px; border: 1px solid black; font-weight: 800;">
     
+    <footer class="news-footer">
+        <div class="footer-container">
+            <div class="newsletter">
+                <h2>Stay Updated with the Latest News</h2>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+    
+            
+            <div class="footer-links">
+                <div class="links-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/nasa-daily">NASA Daily</a></li>
+                        <li><a href="/news">News</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/currency-rate">Currency Rates</a></li>
+                        <li><a href="/blogs">Blogs</a></li>
+                    </ul>
+                </div>
+    
+                <div class="links-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="/news/technology">Technology</a></li>
+                        <li><a href="/news/science">Science</a></li>
+                        <li><a href="/news/world">World News</a></li>
+                        <li><a href="/news/local">Local News</a></li>
+                        <li><a href="/news/sports">Sports News</a></li>
+                    </ul>
+                </div>
+    
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@example.com">info@gmail.com</a></p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                    <p>Address: Georgia</p>
+                </div>
+            </div>
+    
+     
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">YouTube</a>
+                </div>
+            </div>
+        </div>
+    
+
+    </footer>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

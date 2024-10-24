@@ -648,6 +648,101 @@ main {
         "item21 item22 item22";
 }
 
+.item-1 { grid-area: item1; }
+.item-2 { grid-area: item2; }
+.item-3 { grid-area: item3; }
+.item-4 { grid-area: item4; }
+.item-5 { grid-area: item5; }
+.item-6 { grid-area: item6; }
+.item-7 { grid-area: item7; }
+.item-8 { grid-area: item8; }
+.item-9 { grid-area: item9; }
+.item-10 { grid-area: item10; }
+.item-11 { grid-area: item11; }
+.item-12 { grid-area: item12; }
+.item-13 { grid-area: item13; }
+.item-14 { grid-area: item14; }
+.item-15 { grid-area: item15; }
+.item-16 { grid-area: item16; }
+.item-17 { grid-area: item17; }
+.item-18 { grid-area: item18; }
+.item-19 { grid-area: item19; }
+.item-20 { grid-area: item20; }
+.item-21 { grid-area: item21; }
+.item-22 { grid-area: item22; }
+
+.item {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    object-fit: contain;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.item h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.item p {
+    font-size: 14px;
+    color: #555;
+}
+
+.item a {
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.spinner {
+    display: inline-block;
+}
+
+.spinner i {
+    font-size: 18px;
+}
+
+.hidden-weather-day {
+    display: none;
+}
+
+.daily-toggle-button, .hour-toggle-button {
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    font-family: Dosis;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #53dad5;
+}
+
+.hour-toggle-button {
+    margin-top: 20px;
+}
+
+.daily-toggle-button:hover, .hour-toggle-button:hover {
+    color: #25807D;
+}
+
+.hidden-hour {
+    display: none;
+}
+
 /* footer */
 .news-footer {
     font-family: 'Roboto Slab', sans-serif;
@@ -852,97 +947,21 @@ main {
     }
 }
 
-.item-1 { grid-area: item1; }
-.item-2 { grid-area: item2; }
-.item-3 { grid-area: item3; }
-.item-4 { grid-area: item4; }
-.item-5 { grid-area: item5; }
-.item-6 { grid-area: item6; }
-.item-7 { grid-area: item7; }
-.item-8 { grid-area: item8; }
-.item-9 { grid-area: item9; }
-.item-10 { grid-area: item10; }
-.item-11 { grid-area: item11; }
-.item-12 { grid-area: item12; }
-.item-13 { grid-area: item13; }
-.item-14 { grid-area: item14; }
-.item-15 { grid-area: item15; }
-.item-16 { grid-area: item16; }
-.item-17 { grid-area: item17; }
-.item-18 { grid-area: item18; }
-.item-19 { grid-area: item19; }
-.item-20 { grid-area: item20; }
-.item-21 { grid-area: item21; }
-.item-22 { grid-area: item22; }
-
-.item {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    padding: 10px;
+#news-category-btn-div {
     display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    object-fit: contain;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
+    margin-top: 30px;
+    gap: 20px;
 }
 
-.item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.item h3 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.item p {
-    font-size: 14px;
-    color: #555;
-}
-
-.item a {
-    margin-top: 10px;
-    text-align: center;
-    display: block;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.spinner {
-    display: inline-block;
-}
-
-.spinner i {
+#news-category-btn-div button {
     font-size: 18px;
-}
-
-.hidden-weather-day {
-    display: none;
-}
-
-.daily-toggle-button, .hour-toggle-button {
     border: none;
     background-color: white;
-    font-size: 18px;
-    font-family: Dosis;
-    text-transform: uppercase;
-    cursor: pointer;
     text-decoration: underline;
     text-decoration-color: #53dad5;
+    cursor: pointer;
 }
 
-.hour-toggle-button {
-    margin-top: 20px;
-}
-
-.daily-toggle-button:hover, .hour-toggle-button:hover {
-    color: #25807D;
-}
-
-.hidden-hour {
-    display: none;
+#news-category-btn-div button:hover {
+    color: #40a4a1;
 }

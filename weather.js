@@ -14,8 +14,6 @@ newsA.addEventListener("click", function(e){
     }
 })
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const defaultLat = 41.7151;
     const defaultLon = 44.8271;
@@ -139,16 +137,16 @@ map.on('click', function(e) {
 
 //დღის ამინდი
 const dailyIcons = {
-    'u00d': 'weatherIcons/rain1.jpg',
-    'u00n': 'weatherIcons/rain1.jpg',
-    'r06d': 'weatherIcons/rain1.jpg',
-    'r06n': 'weatherIcons/rain1.jpg',
-    'r03d': 'weatherIcons/rain1.jpg',
-    'r03n': 'weatherIcons/rain1.jpg',
-    'r02d': 'weatherIcons/rain1.jpg',
-    'r02n': 'weatherIcons/rain1.jpg',
-    'f01d': 'weatherIcons/rain1.jpg',
-    'f01n': 'weatherIcons/rain1.jpg',
+    'u00d': 'weatherIcons/rain1.png',
+    'u00n': 'weatherIcons/rain1.png',
+    'r06d': 'weatherIcons/rain1.png',
+    'r06n': 'weatherIcons/rain1.png',
+    'r03d': 'weatherIcons/rain1.png',
+    'r03n': 'weatherIcons/rain1.png',
+    'r02d': 'weatherIcons/rain1.png',
+    'r02n': 'weatherIcons/rain1.png',
+    'f01d': 'weatherIcons/rain1.png',
+    'f01n': 'weatherIcons/rain1.png',
     'r01d': 'weatherIcons/sunrain1.png',
     'r01n': 'weatherIcons/moonrain1.png',
     'r04d': 'weatherIcons/sunrain1.png',
@@ -173,24 +171,24 @@ const dailyIcons = {
     'd02n': 'weatherIcons/snow.png',
     'd03d': 'weatherIcons/snow.png',
     'd03n': 'weatherIcons/snow.png',
-    't01d': 'weatherIcons/thunder1.jpg',
-    't01d': 'weatherIcons/thunder1.jpg',
-    't02d': 'weatherIcons/thunder1.jpg',
-    't02d': 'weatherIcons/thunder1.jpg',
-    't03d': 'weatherIcons/thunder1.jpg',
-    't03d': 'weatherIcons/thunder1.jpg',
-    't04d': 'weatherIcons/thunder1.jpg',
-    't04d': 'weatherIcons/thunder1.jpg',
-    't05d': 'weatherIcons/thunder1.jpg',
-    't05d': 'weatherIcons/thunder1.jpg',
-    'c01d': 'weatherIcons/sun1.jpg',
+    't01d': 'weatherIcons/thunder1.png',
+    't01d': 'weatherIcons/thunder1.png',
+    't02d': 'weatherIcons/thunder1.png',
+    't02d': 'weatherIcons/thunder1.png',
+    't03d': 'weatherIcons/thunder1.png',
+    't03d': 'weatherIcons/thunder1.png',
+    't04d': 'weatherIcons/thunder1.png',
+    't04d': 'weatherIcons/thunder1.png',
+    't05d': 'weatherIcons/thunder1.png',
+    't05d': 'weatherIcons/thunder1.png',
+    'c01d': 'weatherIcons/sun1.png',
     'c01n': 'weatherIcons/moon1.png',
-    'c02d': 'weatherIcons/suncloud1.jpg',
-    'c02n': 'weatherIcons/mooncloud1.jpg',
-    'c03d': 'weatherIcons/clouds1.jpg',
-    'c03n': 'weatherIcons/clouds1.jpg',
-    'c04d': 'weatherIcons/clouds1.jpg',
-    'c04n': 'weatherIcons/clouds1.jpg',
+    'c02d': 'weatherIcons/suncloud1.png',
+    'c02n': 'weatherIcons/mooncloud1.png',
+    'c03d': 'weatherIcons/clouds1.png',
+    'c03n': 'weatherIcons/clouds1.png',
+    'c04d': 'weatherIcons/clouds1.png',
+    'c04n': 'weatherIcons/clouds1.png',
     'a01d': 'weatherIcons/fog.png',
     'a01n': 'weatherIcons/fog.png',
     'a02d': 'weatherIcons/fog.png',
@@ -220,12 +218,9 @@ function DailyApi(city, country) {
 }
 
 const displayDailyWeather = (data) => {
-    console.log(data)
-
     const weatherDiv = document.getElementById('daily-weather-div');
     const city = data.city_name;
     const country = data.country_code;
-
     const weatherData = data.data;
     const currentDay = data.data[0];
     
@@ -239,7 +234,8 @@ const displayDailyWeather = (data) => {
     document.getElementById('min').textContent = `Min: ${currentDay.min_temp}°C`;
     document.getElementById('max').textContent = `Max: ${currentDay.max_temp}°C`;
 
-    const currentWindElement = document.getElementById('current-wind');currentWindElement.innerHTML = '';
+    const currentWindElement = document.getElementById('current-wind');
+    currentWindElement.innerHTML = '';
     const windIcon = document.createElement('span');
     const windImage = document.createElement('img');
     windImage.src = 'weatherIcons/wind.png';
@@ -249,50 +245,81 @@ const displayDailyWeather = (data) => {
     const windText = document.createTextNode(` Wind: ${currentDay.wind_spd} m/s, ${currentDay.wind_cdir_full}`);
     currentWindElement.appendChild(windIcon);
     currentWindElement.appendChild(windText);
-    
-    weatherData.forEach((day) => {
-        const dayContainer = document.createElement('div');
-        dayContainer.classList.add('weather-day');
+
+    weatherData.forEach((day, index) => {
+        const dayContainer = createWeatherDayDiv(day);
         
-        const dateElement = document.createElement('h4');
-        dateElement.textContent = day.valid_date;
-        dayContainer.appendChild(dateElement);
-        
-        const descriptionElement = document.createElement('p');
-        descriptionElement.textContent = day.weather.description;
-        dayContainer.appendChild(descriptionElement);
+        if (index >= 4) {
+            dayContainer.classList.add('hidden-weather-day');
+        }
 
-        const iconElement = document.createElement('img');
-        // Use custom icon for each day's weather
-        iconElement.src = dailyIcons[day.weather.icon] || `https://www.weatherbit.io/static/img/icons/${day.weather.icon}.png`;
-        dayContainer.appendChild(iconElement);
-
-        const tempElement = document.createElement('p');
-        tempElement.textContent = `${day.temp}°C`;
-        dayContainer.appendChild(tempElement);
-
-        const tempContainer = document.createElement('div');
-        tempContainer.classList.add('temperature-container'); 
-        const maxTempElement = document.createElement('span'); maxTempElement.textContent = `Max: ${day.max_temp}°C`;tempContainer.appendChild(maxTempElement);
-        const minTempElement = document.createElement('span'); minTempElement.textContent = `Min: ${day.min_temp}°C`;tempContainer.appendChild(minTempElement);
-        dayContainer.appendChild(tempContainer);
-
-        const windElement = document.createElement('p');
-        windElement.classList.add('wind-p');
-        const windIcon = document.createElement('span');
-        const windImage = document.createElement('img');
-        windImage.src = 'weatherIcons/wind.png';
-        windImage.alt = 'Wind Icon';
-        windImage.classList.add('wind-icon');
-        windIcon.appendChild(windImage);
-        windElement.appendChild(windIcon);
-        const windText = document.createElement('span');
-        windText.textContent = ` ${day.wind_spd} m/s, ${day.wind_cdir_full}`;
-        windElement.appendChild(windText);
-        dayContainer.appendChild(windElement);
         weatherDiv.appendChild(dayContainer);
     });
-}
+
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = 'Show More';
+    toggleButton.classList.add('daily-toggle-button');
+
+    toggleButton.addEventListener('click', () => {
+        const hiddenDays = document.querySelectorAll('.hidden-weather-day');
+        const isHidden = hiddenDays[0].style.display === 'none' || hiddenDays[0].style.display === '';
+
+        hiddenDays.forEach((day) => {
+            day.style.display = isHidden ? 'flex' : 'none';
+        });
+
+        toggleButton.textContent = isHidden ? 'Show Less' : 'Show More';
+    });
+
+    weatherDiv.appendChild(toggleButton);
+};
+
+const createWeatherDayDiv = (day) => {
+    const dayContainer = document.createElement('div');
+    dayContainer.classList.add('weather-day');
+
+    const dateElement = document.createElement('h4');
+    dateElement.textContent = day.valid_date;
+    dayContainer.appendChild(dateElement);
+
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = day.weather.description;
+    dayContainer.appendChild(descriptionElement);
+
+    const iconElement = document.createElement('img');
+    iconElement.src = dailyIcons[day.weather.icon] || `https://www.weatherbit.io/static/img/icons/${day.weather.icon}.png`;
+    dayContainer.appendChild(iconElement);
+
+    const tempElement = document.createElement('p');
+    tempElement.textContent = `${day.temp}°C`;
+    dayContainer.appendChild(tempElement);
+
+    const tempContainer = document.createElement('div');
+    tempContainer.classList.add('temperature-container');
+    const maxTempElement = document.createElement('span');
+    maxTempElement.textContent = `Max: ${day.max_temp}°C`;
+    tempContainer.appendChild(maxTempElement);
+    const minTempElement = document.createElement('span');
+    minTempElement.textContent = `Min: ${day.min_temp}°C`;
+    tempContainer.appendChild(minTempElement);
+    dayContainer.appendChild(tempContainer);
+
+    const windElement = document.createElement('p');
+    windElement.classList.add('wind-p');
+    const windIcon = document.createElement('span');
+    const windImage = document.createElement('img');
+    windImage.src = 'weatherIcons/wind.png';
+    windImage.alt = 'Wind Icon';
+    windImage.classList.add('wind-icon');
+    windIcon.appendChild(windImage);
+    windElement.appendChild(windIcon);
+    const windText = document.createElement('span');
+    windText.textContent = ` ${day.wind_spd} m/s, ${day.wind_cdir_full}`;
+    windElement.appendChild(windText);
+    dayContainer.appendChild(windElement);
+
+    return dayContainer;
+};
 
 DailyApi()
     .then(displayDailyWeather)
@@ -302,20 +329,20 @@ DailyApi()
 
 //საათობრივი ამინდი
 const weatherIcons = {
-    '01d': 'weatherIcons/sun1.jpg',
+    '01d': 'weatherIcons/sun1.png',
     '01n': 'weatherIcons/moon1.png',
-    '02d': 'weatherIcons/suncloud1.jpg',
-    '02n': 'weatherIcons/mooncloud1.jpg',
-    '03d': 'weatherIcons/clouds1.jpg',
-    '03n': 'weatherIcons/clouds1.jpg',
-    '04d': 'weatherIcons/clouds1.jpg',
-    '04n': 'weatherIcons/clouds1.jpg',
+    '02d': 'weatherIcons/suncloud1.png',
+    '02n': 'weatherIcons/mooncloud1.png',
+    '03d': 'weatherIcons/clouds1.png',
+    '03n': 'weatherIcons/clouds1.png',
+    '04d': 'weatherIcons/clouds1.png',
+    '04n': 'weatherIcons/clouds1.png',
     '09d': 'weatherIcons/sunrain1.png',
     '09n': 'weatherIcons/moonrain1.png',
-    '10d': 'weatherIcons/rain1.jpg',
-    '10n': 'weatherIcons/rain1.jpg',
-    '11d': 'weatherIcons/thunder1.jpg',
-    '11n': 'weatherIcons/thunder1.jpg',
+    '10d': 'weatherIcons/rain1.png',
+    '10n': 'weatherIcons/rain1.png',
+    '11d': 'weatherIcons/thunder1.png',
+    '11n': 'weatherIcons/thunder1.png',
     '13d': 'weatherIcons/snow.png',
     '13n': 'weatherIcons/snow.png',
     '50d': 'weatherIcons/fog.png',
@@ -348,57 +375,77 @@ const displayHourlyWeather = (data) => {
     const weatherData = data.list;
     weatherDiv.innerHTML = '';
 
+    const allHourContainers = document.createDocumentFragment();
+
     weatherData.forEach((hour, index) => {
-        if (index < 24) {
-            const hourContainer = document.createElement('div');
-            hourContainer.classList.add('hourly-weather-hour');
+        const hourContainer = document.createElement('div');
+        hourContainer.classList.add('hourly-weather-hour');
 
-            const timeElement = document.createElement('p');
-            const hourTime = new Date(hour.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            timeElement.textContent = `${hourTime}`;
-            hourContainer.appendChild(timeElement);
+        const timeElement = document.createElement('p');
+        const hourTime = new Date(hour.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        timeElement.textContent = `${hourTime}`;
+        hourContainer.appendChild(timeElement);
 
-            const tempElement = document.createElement('p');
-            const tempCelsius = (hour.main.temp - 273.15).toFixed(1);
-            tempElement.textContent = `${tempCelsius}°C`;
-            hourContainer.appendChild(tempElement);
+        const tempElement = document.createElement('p');
+        const tempCelsius = (hour.main.temp - 273.15).toFixed(1);
+        tempElement.textContent = `${tempCelsius}°C`;
+        hourContainer.appendChild(tempElement);
 
-            const iconElement = document.createElement('img');
-            const iconCode = hour.weather[0].icon;  // Weather icon code from API
-            const customIcon = weatherIcons[iconCode];  // Get custom icon based on the code
+        const iconElement = document.createElement('img');
+        const iconCode = hour.weather[0].icon;
+        const customIcon = weatherIcons[iconCode];
 
-            if (customIcon) {
-                iconElement.src = customIcon;
-            } else {
-                iconElement.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`; // Fallback to default if custom icon not found
-            }
-            iconElement.alt = hour.weather[0].description; 
-            hourContainer.appendChild(iconElement);
+        if (customIcon) {
+            iconElement.src = customIcon;
+        } else {
+            iconElement.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        }
+        iconElement.alt = hour.weather[0].description;
+        hourContainer.appendChild(iconElement);
 
-            const conditionElement = document.createElement('p');
-            const weatherDescription = hour.weather[0].description;
-            conditionElement.textContent = `${weatherDescription}`;
-            hourContainer.appendChild(conditionElement);
+        const conditionElement = document.createElement('p');
+        const weatherDescription = hour.weather[0].description;
+        conditionElement.textContent = `${weatherDescription}`;
+        hourContainer.appendChild(conditionElement);
 
-            const precipElement = document.createElement('p');
-            precipElement.classList.add('humidity-p');
-            const precipIcon = document.createElement('span');
-            const precipImage = document.createElement('img');
-            precipImage.src = 'weatherIcons/humidity.png';
-            precipImage.alt = 'Precipitation Icon';
-            precipImage.classList.add('precip-icon');
-            precipIcon.appendChild(precipImage);
-            precipElement.appendChild(precipIcon);
-            const precipitation = hour.rain ? `${hour.rain['3h']} mm` : '0 mm';
-            precipElement.appendChild(document.createTextNode(precipitation));
-            hourContainer.appendChild(precipElement);
+        const precipElement = document.createElement('p');
+        precipElement.classList.add('humidity-p');
+        const precipIcon = document.createElement('span');
+        const precipImage = document.createElement('img');
+        precipImage.src = 'weatherIcons/humidity.png';
+        precipImage.alt = 'Precipitation Icon';
+        precipImage.classList.add('precip-icon');
+        precipIcon.appendChild(precipImage);
+        const precipitation = hour.rain ? `${hour.rain['3h']} mm` : '0 mm';
+        precipElement.appendChild(document.createTextNode(precipitation));
+        hourContainer.appendChild(precipElement);
 
+        allHourContainers.appendChild(hourContainer);
 
-            weatherDiv.appendChild(hourContainer);
+        if (index >= 6) {
+            hourContainer.classList.add('hidden-hour');
         }
     });
-};
 
+    weatherDiv.appendChild(allHourContainers);
+
+    const toggleButton = document.createElement('button');
+    toggleButton.textContent = 'Show More';
+    toggleButton.classList.add('hour-toggle-button');
+
+    toggleButton.addEventListener('click', () => {
+        const hiddenHours = document.querySelectorAll('.hidden-hour');
+        const isHidden = hiddenHours[0].style.display === 'none' || hiddenHours[0].style.display === '';
+
+        hiddenHours.forEach((hour) => {
+            hour.style.display = isHidden ? 'flex' : 'none';
+        });
+
+        toggleButton.textContent = isHidden ? 'Show Less' : 'Show More';
+    });
+
+    weatherDiv.appendChild(toggleButton);
+};
 
 HourlyApi()
     .then(displayHourlyWeather)

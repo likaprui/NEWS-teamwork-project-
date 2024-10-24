@@ -168,9 +168,11 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.075); /* Soft border */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.105); /* Very light shadow */
+    width: 70%;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 2px;
+    /* font-family: Roboto Slab; */
     font-family: Dosis;
 }
 

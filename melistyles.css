@@ -573,17 +573,17 @@ main {
 #location-news-search input {
     padding: 10px;
     border: 1px solid gray;
-    border-radius: 8px;
+    border-radius: 1px;
     width: 100%;
 }
 
 #fetch-location-news-btn {
     width: 163px;
-    padding: 15px;
+    padding: 10px;
     margin-top: 20px;
     background-color: black;
     color: white;
-    border-radius: 8px;
+    border-radius: 3px;
     text-transform: uppercase;
     border: none;
     font-size: 15px;
@@ -592,9 +592,10 @@ main {
 }
 
 #fetch-location-news-btn:hover {
-    background-color: #0d6352;
-    color: white;
+    background-color: #F2EDE6;
+    color: rgb(0, 0, 0);
     transform: scale(1.05);
+    border: 1px solid black;
 }
 
 #location-news-div {

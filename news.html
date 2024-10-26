@@ -19,11 +19,12 @@
             <div class="logodiv">
                 <p>NEWS</p>
             </div>
+            <ion-icon id="menu" name="grid-outline"></ion-icon>
             <nav>
                 <a href="">Home</a>
                 <div class="news-holder">
-                    <a href="">News<ion-icon name="chevron-down-outline"></ion-icon></a>
-                    <div class="news-types">
+                    <a id="news-a">News<ion-icon name="chevron-down-outline"></ion-icon></a>
+                    <div class="news-types" id="news-types">
                         <ul class="news-ul">
                             <li>Nasa Daily</li>
                             <li>Sports</li>
@@ -36,10 +37,11 @@
                 
                 <a href="weather.html">Weather</a>
                 <a href="news.html">Locational News</a>
-                <a href="">Contact</a>
+                <a href="#" id="a-contact">Contact</a>
             </nav>
         </div>
     </header>
+
     <main>
         <section id="location-news-search">
             <input type="text" name="location-news" id="location-news" placeholder="Enter location:">
@@ -97,7 +99,7 @@
                 <div class="links-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/nasa-daily">NASA Daily</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/sports">Sports</a></li>
@@ -136,7 +138,10 @@
                 </div>
             </div>
         </div>
+    
+
     </footer>
+
 
     <script src="news.js"></script>
 </body>

@@ -1,3 +1,27 @@
+// menu
+let menu=document.getElementById("menu")
+let navbar=document.getElementsByTagName("nav")[0]
+
+menu.addEventListener("click", ()=>{
+    if(navbar.style.visibility==="hidden"){
+        navbar.style.visibility="visible";
+    }
+    else{
+        navbar.style.visibility="hidden"
+        
+    }
+})
+
+window.addEventListener('resize', ()=>{
+    if(window.innerWidth>640){
+        navbar.style.visibility="visible"
+    }else{
+        navbar.style.visibility="hidden"
+    }
+})
+
+
+// news API
 let userLocation = "Georgia AND Tbilisi NOT state NOT Atlanta";
 
 function NewsApi(location = "Georgia AND Tbilisi NOT state NOT Atlanta") {
@@ -42,7 +66,7 @@ const displayNews = (data) => {
     // For each article
     articles.forEach((article, index) => {
         const gridItem = document.createElement('div');
-        gridItem.classList.add('item', `item-${index + 1}`);
+        gridItem.classList.add('news-grid-item', `item-${index + 1}`);
 
         gridItem.innerHTML = `
             <img src="${article.urlToImage}" alt="${article.title}" style="width: 100%; height: auto;" onerror="this.src='https://media.istockphoto.com/id/1313303632/video/breaking-news-template-intro-for-tv-broadcast-news-show-program-with-3d-breaking-news-text.jpg?s=640x640&k=20&c=S0dTZp37XKVcCAnoguMnRatvv4Nkp2cjmA5aYOOrJs8=';">

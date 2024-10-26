@@ -144,5 +144,3 @@ window.addEventListener('resize', ()=>{
         navbar.style.visibility="hidden"
     }
 })
-
-

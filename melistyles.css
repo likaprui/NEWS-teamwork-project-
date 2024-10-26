@@ -469,6 +469,7 @@ main {
     .newsletter input {
         width: 100% !important;
     }
+
 }
 
 @media (max-width: 500px) {
@@ -588,30 +589,54 @@ main {
 /* locational news */
 
 #location-news-search {
-    width: 64%;
+    width: 100%;
     margin: auto;
+    padding: 20px 40px;
+}
+
+#locations-news-search-header{
+    width: 100%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    margin-top: 50px;
+    background-image: url(https://img.freepik.com/free-vector/dark-wavy-background_23-2148414748.jpg?t=st=1729956648~exp=1729960248~hmac=dc40eca05572639b85be518c4f4add6b25859d2be5d26300a4252276868492cb&w=996);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+#location-news-input-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 60%;
+    height: auto;
+    position: relative;
 }
 
 #location-news-search input {
-    padding: 10px;
+    padding: 18px;
     border: 1px solid gray;
-    border-radius: 8px;
+    border-radius: 18px;
     width: 100%;
+    font-size: 18px;
 }
 
 #fetch-location-news-btn {
-    width: 163px;
-    padding: 15px;
+    position: absolute;
+    bottom: 7px;
+    right: 5px;
+    width: auto;
+    padding: 13px 23px;
     margin-top: 20px;
-    background-color: black;
+    background: linear-gradient(135deg, #d066f9, #a84dc5, #7d3f98);
     color: white;
-    border-radius: 8px;
+    border-radius: 18px;
     text-transform: uppercase;
     border: none;
     font-size: 15px;
@@ -620,9 +645,8 @@ main {
 }
 
 #fetch-location-news-btn:hover {
-    background-color: #0d6352;
+    background: linear-gradient(135deg, #412B6D,#6086AE);
     color: white;
-    transform: scale(1.05);
 }
 
 #location-news-div {
@@ -630,6 +654,15 @@ main {
     margin: auto;
     padding: 40px;
     overflow: hidden;
+}
+
+#news-categories-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    font-family:  Roboto Slab;
+    font-weight:400;
 }
 
 .grid-container {
@@ -798,7 +831,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
     gap: 20px;
 }
 
@@ -809,6 +841,8 @@ main {
     text-decoration: underline;
     text-decoration-color: #53dad5;
     cursor: pointer;
+    font-family:  Roboto Slab;
+    font-weight:400;
 }
 
 #news-category-btn-div button:hover {
@@ -1151,6 +1185,11 @@ main {
 
 
     @media (max-width: 773px) {
+
+        #location-news-input-div {
+            width: 90%;
+        }
+
         .news-footer {
             padding: 30px 0;
             width: 100%;

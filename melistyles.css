@@ -1107,8 +1107,6 @@ main {
         grid-template-rows: auto;
     }
 
-    .griddiv{
-    }
     #grid-div1{
         grid-row: 1/6;
         grid-column: 1/5;

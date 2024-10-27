@@ -1,60 +1,3 @@
-// drop-down pages
-const newsA=document.getElementById("news-a")
-const newsTypesList=document.getElementsByClassName("news-types")[0]
-
-newsA.addEventListener("click", function(e){
-    e.preventDefault();
-
-    if(newsTypesList.classList.contains("show")){
-        newsTypesList.classList.remove("show")
-        newsA.classList.remove("open")
-    }else{
-        newsTypesList.classList.add("show")
-        newsA.classList.add("open")
-        console.log("hii")
-    }
-})
-
-// menu
-let menu=document.getElementById("menu")
-let navbar=document.getElementsByTagName("nav")[0]
-
-menu.addEventListener("click", ()=>{
-    if(navbar.style.visibility==="hidden"){
-        navbar.style.visibility="visible";
-    }
-    else{
-        navbar.style.visibility="hidden"
-        
-    }
-})
-
-window.addEventListener('resize', ()=>{
-    if(window.innerWidth>857){
-        navbar.style.visibility="visible"
-    }else{
-        navbar.style.visibility="hidden"
-    }
-})
-
-
-
-// contact page function
-
-let aContact=document.getElementById("a-contact")
-let mainPort=document.getElementsByTagName("main")[0]
-let contactPage=document.getElementsByClassName("contact-page")[0]
-aContact.addEventListener("click", ()=>{
-    contactPage.style.display="flex"
-    mainPort.innerHTML=""
-    mainPort.appendChild(contactPage)
-    console.log("jj")
-})
-
-
-
-
-//  main code
 let userLocation = "Georgia AND Tbilisi NOT state NOT Atlanta";
 
 function NewsApi(location = "Georgia AND Tbilisi NOT state NOT Atlanta") {
@@ -99,7 +42,7 @@ const displayNews = (data) => {
     // For each article
     articles.forEach((article, index) => {
         const gridItem = document.createElement('div');
-        gridItem.classList.add('item', `item-${index + 1}`);
+        gridItem.classList.add('news-grid-item', `item-${index + 1}`);
 
         gridItem.innerHTML = `
             <img src="${article.urlToImage}" alt="${article.title}" style="width: 100%; height: auto;" onerror="this.src='https://media.istockphoto.com/id/1313303632/video/breaking-news-template-intro-for-tv-broadcast-news-show-program-with-3d-breaking-news-text.jpg?s=640x640&k=20&c=S0dTZp37XKVcCAnoguMnRatvv4Nkp2cjmA5aYOOrJs8=';">

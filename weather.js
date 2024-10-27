@@ -1,3 +1,25 @@
+// menu
+let menu=document.getElementById("menu")
+let navbar=document.getElementsByTagName("nav")[0]
+
+menu.addEventListener("click", ()=>{
+    if(navbar.style.visibility==="hidden"){
+        navbar.style.visibility="visible";
+    }
+    else{
+        navbar.style.visibility="hidden"
+        
+    }
+})
+
+window.addEventListener('resize', ()=>{
+    if(window.innerWidth>640){
+        navbar.style.visibility="visible"
+    }else{
+        navbar.style.visibility="hidden"
+    }
+})
+
 // a News tag drop-down
 const newsA=document.getElementById("news-a")
 const newsTypesList=document.getElementsByClassName("news-types")[0]

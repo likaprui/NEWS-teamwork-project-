@@ -21,10 +21,13 @@
             </div>
             <ion-icon id="menu" name="grid-outline"></ion-icon>
             <nav>
-                <a href="index.html">Home</a>
+                <a href="">Home</a>
                 <div class="news-holder">
                     <a id="news-a">News<ion-icon name="chevron-down-outline"></ion-icon></a>
+
                     <div class="news-types">
+
+                    <div class="news-types" id="news-types">
                         <ul class="news-ul">
                             <li><a href="#">Nasa Daily</a></li>
                             <li><a href="#">Sports</a></li>
@@ -41,6 +44,7 @@
             </nav>
         </div>
     </header>
+
     <main>
 
         <!------- contact page --------->
@@ -93,16 +97,25 @@
         <!---------------------->
 
         <section id="location-news-search">
-            <input type="text" name="location-news" id="location-news" placeholder="Enter location:">
-            <button id="fetch-location-news-btn">Get News</button>
-            <div id="news-category-btn-div">
-                <button id="filter-sports-btn">Sports</button>
-                <button id="filter-business-btn">Business</button>
-                <button id="filter-technology-btn">Technology</button>
-                <button id="filter-entertainment-btn">Entertainment</button>
-                <button id="filter-health-btn">Health</button>
-                <button id="filter-science-btn">Science</button>
-                <button id="filter-political-btn">Political</button>
+            <div id="locations-news-search-header">
+                <div id="location-news-input-div">
+                    <input type="text" name="location-news" id="location-news" placeholder="Enter location:">
+                    <button id="fetch-location-news-btn">Search</button>
+                </div>
+            </div>
+            <div id="news-categories-container">
+                <div>
+                    <h2>Popular categories</h2>
+                </div>
+                <div id="news-category-btn-div">
+                    <button id="filter-sports-btn">Sports</button>
+                    <button id="filter-business-btn">Business</button>
+                    <button id="filter-technology-btn">Technology</button>
+                    <button id="filter-entertainment-btn">Entertainment</button>
+                    <button id="filter-health-btn">Health</button>
+                    <button id="filter-science-btn">Science</button>
+                    <button id="filter-political-btn">Political</button>
+                </div>
             </div>
         </section>
         <section id="location-news-div">
@@ -149,11 +162,12 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="/nasa-daily">NASA Daily</a></li>
                         <li><a href="/news">News</a></li>
                         <li><a href="/sports">Sports</a></li>
                         <li><a href="/currency-rate">Currency Rates</a></li>
-                        <li><a href="blog.html">Blogs</a></li>
+                        <li><a href="/blogs">Blogs</a></li>
                     </ul>
                 </div>
     
@@ -191,6 +205,11 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+
+    </footer>
+
+
     <script src="news.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 // a News tag drop-down
 const newsA=document.getElementById("news-a")
-const newsTypesList=document.getElementById("news-types")
+const newsTypesList=document.getElementsByClassName("news-types")[0]
 
 newsA.addEventListener("click", function(e){
     e.preventDefault();
@@ -14,6 +14,42 @@ newsA.addEventListener("click", function(e){
     }
 })
 
+// menu
+let menu=document.getElementById("menu")
+let navbar=document.getElementsByTagName("nav")[0]
+
+menu.addEventListener("click", ()=>{
+    if(navbar.style.visibility==="hidden"){
+        navbar.style.visibility="visible";
+    }
+    else{
+        navbar.style.visibility="hidden"
+        
+    }
+})
+
+window.addEventListener('resize', ()=>{
+    if(window.innerWidth>640){
+        navbar.style.visibility="visible"
+    }else{
+        navbar.style.visibility="hidden"
+    }
+})
+
+// contact page function
+
+let aContact=document.getElementById("a-contact")
+let mainPort=document.getElementsByTagName("main")[0]
+let contactPage=document.getElementsByClassName("contact-page")[0]
+aContact.addEventListener("click", ()=>{
+    contactPage.style.display="flex"
+    mainPort.innerHTML=""
+    mainPort.appendChild(contactPage)
+    console.log("jj")
+})
+
+
+// main code
 document.addEventListener("DOMContentLoaded", () => {
     const defaultLat = 41.7151;
     const defaultLon = 44.8271;

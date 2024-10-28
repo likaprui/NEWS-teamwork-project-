@@ -39,6 +39,7 @@ header{
     width: 80%;
     display: flex;
     justify-content: space-between;
+    position: relative;
     /* gap: 500px; */
 }
 .logodiv{
@@ -99,7 +100,8 @@ a:hover{
     position: relative;
 }
 
-.news-types {
+.news-types {    
+    position: absolute;
     display: none;
     position: absolute;
     top: 35px; 
@@ -113,7 +115,9 @@ a:hover{
     visibility: hidden; 
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
-    z-index: 10; 
+    z-index: 1111;
+
+
 }
 
 .news-holder a {
@@ -132,7 +136,8 @@ a:hover{
 
 .news-types ul {
     list-style: none;
-    z-index: 1111111111111111111;
+    z-index: 1111;
+    position: absolute;
 }
 
 .news-types ul li {
@@ -155,6 +160,7 @@ a:hover{
     visibility: visible;
     transform: translateY(0);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1111;
 }
 
 .news-holder a.open ion-icon {
@@ -208,6 +214,7 @@ a:hover{
     height: 80%;
     margin-top: 30px;
     align-items: center;
+    z-index: 1111;
 }
 .h1 {
     font-size: 4.5vw;
@@ -419,6 +426,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 .container{
     display: flex;
@@ -426,6 +434,7 @@ main{
     height: 100%;
     width: 100%;
     background-color: #F2EDE6;
+    z-index: 1;
 }
 
 .row{

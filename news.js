@@ -37,6 +37,7 @@ window.addEventListener('resize', ()=>{
 
 
 // news API
+
 let userLocation = "Georgia AND Tbilisi NOT state NOT Atlanta";
 
 function NewsApi(location = "Georgia AND Tbilisi NOT state NOT Atlanta") {

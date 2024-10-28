@@ -1,0 +1,1391 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');   
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+/* italiana */
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+body{
+    /* padding: 20px 80px 20px 80px; */
+    display: flex;
+    /* background-color: rgba(1, 0, 0, 250); */
+    background: radial-gradient(circle, rgba(29,41,72,1) 0%, rgba(20,29,51,1) 25%, rgba(15,22,40,1) 37%, rgba(5,10,22,1) 100%);
+    flex-direction: column;
+    align-items: center;
+    font-family:  "Abril Fatface", serif;
+    overflow-x: hidden;
+    background-color: rgba(39,40,35,255);
+    color:#FFF
+}
+
+/* --------------- header --------------------- */
+
+
+header{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: #FFF;
+}
+.header-div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.logodiv{
+    font-size: 35px;
+    
+}
+.logodiv p{
+    font-family: "Abril Fatface", serif;
+}
+nav{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 900px;
+    justify-content: space-around;
+    visibility: visible;
+}
+
+chevron-down-outline{
+    margin-left: 9px;
+}
+#menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+nav a{
+    position: relative;
+    font-size: 19px;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-family: Roboto Slab;
+    /* font-family:Playfair Display; */
+
+}
+a:after{
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover:after{
+    width: 100%;
+    transition: 1s;
+}
+a:hover{
+    /* color: #000; */
+}
+
+.news-holder {
+    position: relative;
+}
+
+.news-types {
+    display: none;
+    position: absolute;
+    top: 35px; 
+    left: 0;
+    background-color: #F2EDE6;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    padding: 10px 0;
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+    z-index: 10; 
+    
+}
+
+.news-holder a {
+    cursor: pointer; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    
+}
+
+.news-holder a ion-icon {
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.news-types ul {
+    list-style: none;
+}
+
+.news-types ul li {
+    padding: 10px 20px;
+    color: #000000;
+    font-size: 16px;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+    /* font-family: Roboto Slab; */
+    font-family:Playfair Display;
+
+}
+
+.news-types ul li:hover {
+    background-color: #e0dddd;
+    padding-left: 25px; 
+}
+
+
+.news-types.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.news-holder a.open ion-icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+/* ---------------------- main ---------------------- */
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 180px;
+    position: relative;
+    width: 79%;
+    border-left: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+    height: auto;
+    padding-bottom: 100px;
+}
+
+
+/*-------------------- contact page -------------------- */
+
+.contact-page {
+    font-family:Playfair Display;
+
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 27px;
+    /* gap: 60px; */
+    margin-top: 50px;
+    height: auto;
+    align-items: center;
+    display: none;
+}
+
+.imgDiv {
+    min-width: 450px;
+    height: 700px;
+}
+.imgDiv img{
+    width: 100%;
+    height: 100%;
+}
+
+.contact {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    height: 80%;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 80%;
+    margin-top: 30px;
+    align-items: center;
+}
+.h1 {
+    font-size: 4.5vw;
+    letter-spacing: 1.2px;
+}
+.contact form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.input-box {
+    width: 100%;
+    height: 90px;
+}
+
+
+.contact-page input {
+    padding: 20px;
+    width: 95%;
+    border: none;
+    outline: none;
+    font-size: 22px;
+    border-bottom: 3px solid black;
+    background: none;
+}
+
+
+
+.contact-page input[type="button"] {
+    border-radius: 40px;
+    background-color: black;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1.3px;
+    margin-top: 50px;
+}
+
+.contact-info{
+    min-width: 20%;
+    height: 70%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info-detalize{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: auto;
+    text-align: center;
+    gap: 15px;
+}
+.socials{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 232px;
+    height: 40px;
+
+}
+.socials span{
+    width: 39px;
+    height: 39px;
+}
+.socials span img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+b{
+    font-weight: 700;
+}
+
+.contact-page input[type=button]:hover{
+    background-color: #e4d3d3;
+    color: #000;
+    transition: 1s;
+}
+/* @media (max-width: 1750px) {
+    .contact-info{
+        width: 90%;
+        height: 120px;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .info-detalize{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: auto;
+        text-align: center;
+        width: 100%;
+    }
+    .socials{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 232px;
+        height: auto;
+    
+    }
+} */
+
+@media (max-width:1730px) {
+.contact-page{
+    height: auto;
+    padding-bottom: 40px;
+
+}
+.contact{
+    margin-left: 0px;
+
+}
+.contact-info{
+    width: 90%;
+    height: 120px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.info-detalize{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: auto;
+    text-align: center;
+    width: 100%;
+}
+.socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 232px;
+    height: auto;
+
+}
+}
+
+@media (max-width:1430px) {
+
+    .contact-page{
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+    .imgDiv {
+        min-width: 100%;
+        height: 400px;
+        background: url(socials/contact-img.png) no-repeat no-repeat center;
+        background-position:center;
+
+    }
+    .imgDiv img{
+        display: none;
+    }
+    .contact{
+        width: 90%;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+}
+
+
+@media (max-width:780px) {
+    .imgDiv{
+        display: none;
+    }
+    .contact-page{
+        height: auto;
+        padding: 30px;
+        width: 80%;
+
+    }
+    .contact{
+        margin-left: 0px;
+
+    }
+    .h1{
+        font-size: 7vw;
+    }
+    input{
+        padding: 15px;
+    }
+    input[type="button"]{
+        margin-top: 10px;
+    }
+    .contact{
+        width: 100%;
+    }
+    .contact-info{
+        font-size: 2vw;
+    }
+}
+
+/* --------------------------------- */
+.about{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    height: 100vh;
+    gap: 100px;
+    padding: 20px;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 48%;
+}
+.text h1{
+    font-size: 4.5vw;
+    font-family:  "Abril Fatface", serif;
+    color: #fff;
+}
+.text p{
+    font-size: 18px;
+    font-family: Dosis;
+}
+.text h2{
+    font-family: Dosis;
+}
+.img{
+    width: 40%;
+    /* background-color: aquamarine; */
+    height: 60vh;
+}
+.img img{
+    width: 600px;
+    height: 620px;
+    margin-top: -50px;
+}
+.buttons button{
+    padding: 10px;
+    font-size: 17px;
+    border-radius: 7px;
+    border: none;
+}
+.buttons{
+    display: flex;
+    gap: 50px;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+}
+.buttons a{
+    text-decoration: none;
+}
+/* animation */
+.after{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.fly{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 80vh;
+}
+.raketa{
+    animation: raketa-fly 2.5s ease-in forwards;    
+    position: absolute;
+    bottom: 0;
+    transition: 2s;
+
+}
+.cloud{
+    height: 20vh;
+    width: 90vh;
+    /* position: absolute; */
+}
+#rcloud{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: Rcloud-fly 2s ease-in forwards;    
+}
+#lcloud{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: Lcloud-fly 2s ease-in-out forwards;    
+
+}
+
+
+@keyframes raketa-fly {
+    0%{
+        transform: translateY(200px);  
+          
+    }
+
+    100%{
+        transform: translateY(-1000px);
+        .after{
+            display: block;
+        }
+    }
+}
+@keyframes Lcloud-fly {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-2000px);
+    }
+}
+
+@keyframes Rcloud-fly {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(2000px);
+    }
+}
+.show{
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    animation:  appear 2s ease-out forwards;
+}
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }        
+
+}
+
+
+/* ------------ */
+.planets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+}
+.Daily-nasa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+}
+.planetimg{
+    width: 70%;
+    height: 30vh;
+    background: url("imgs/tech.webp");
+    background-size: cover;
+    background-position: center;
+
+}
+.explore p{
+    font-size: 17px;
+    letter-spacing: 2px;
+    width: 80%;
+    font-family: Dosis;
+}
+.explore{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    gap: 30px;
+}
+.explore h1{
+    font-size: 60px;
+    /* font-family:  "Abril Fatface", serif; */
+    font-family: Italiana;
+}
+
+.stars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    width: 80%;
+}
+
+.startext p{
+    font-size: 16px;
+    font-family: Dosis;
+}
+.startext h1{
+    font-size: 40px;
+    font-family:  Italiana;
+    font-weight: 600;
+}
+.startext h2{
+    font-family: Dosis;
+
+}
+.startext{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.starimg{
+    width: 90%;
+    height: 70vh;
+    border-radius: 14px;
+    background: url("imgs/green_ligth.webp");
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+.zpatern{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto; 
+    gap: 20px;
+    padding: 20px;
+}
+
+  
+.big {
+    grid-column: span 3;
+    height: 200px;
+}
+.summary{
+    display: flex;
+}
+.summary img{
+    width: 50%;
+    height: 200px;
+    position: relative;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 8px 0 0 8px;
+
+}
+
+  
+.b-left, .b-right, .b-center {
+    grid-column: 30% 30% 30%;
+}
+
+
+.zpatern {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.card {
+    width: 280px;
+    height: 360px;
+    border-radius: 5px;
+    padding: 1.5rem;
+    background: white;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    font-family: Dosis;
+    
+
+
+    &:hover {
+        transform: translateY(20px);
+
+        &:before {
+            opacity: 1;
+        }
+
+        .info {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 2;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 15px;
+    }
+
+    .info {
+        position: relative;
+        z-index: 3;
+        color: white;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: 0.5s;
+
+
+        h1 {
+            margin: 0 0 20px 0;
+            font-family: Dosis;
+
+        }
+
+        p {
+            letter-spacing: 1px;
+            font-size: 15px;
+            margin-top: 8px;
+            font-family: Dosis;
+
+        }
+
+        button {
+            padding: 0.6rem;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s ease;
+        }
+    }
+}
+
+.NewsDetalize{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    width: 77%;
+    gap: 40px;
+    border-top: 1px solid rgb(248, 245, 245);
+    border-left: 1px solid rgb(255, 249, 249);
+    padding: 10px 20px;
+    /* font-family: Dosis; */
+
+}
+.NewsDetalize h1{
+    margin: 40px 0;
+    font-family: Dosis;
+
+}
+.NewsDetalize div{
+    font-size: 18px;
+    width: 62%;
+    font-family: Dosis;
+
+}
+.details{
+    font-size: 20px;
+    width: 90%;
+    font-family: Dosis;
+    word-spacing: 0.3rem;
+}
+#details-img{
+    width: 38%;
+}
+
+/* --------------- */
+.nasa-project-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
+    background: none;
+    padding: 50px;
+    border: #f8f9fa 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    row-gap: 30px;
+}
+
+.nasa-project-container h1 {
+    text-align: center;
+    font-family: Italiana;
+    font-weight: 600;
+}
+
+
+.nasa-project-container input{
+    outline: none;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: none;
+    color:#fff;
+    letter-spacing: 1.3px;
+}
+
+.nasa-project-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e5e9ed;
+    color: rgb(25, 25, 65);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 1.3px;
+}
+
+.nasa-project-container button:hover {
+    background: none;
+    border: 1px solid #FFF;
+    color:#fff;
+    transition: 0.7s;
+
+}
+
+.project-info {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: none;
+    border-left: 4px solid #ffffff;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #ffffff;
+    
+}
+.project-info p{
+    font-family: Dosis;
+}
+
+
+
+
+
+
+
+
+
+.course{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    row-gap: 30px;
+    width: 80%;
+    height: auto;
+    /* padding: 20px; */
+}
+.headtext h1{
+    font-size: 60px;
+    font-weight: 900;
+    font-family:  "Abril Fatface", serif;
+    letter-spacing: 2.5px;
+    word-spacing: 1.2rem;
+}
+.headtext p{
+    font-size: 30px;
+    font-family: Dosis;
+
+}
+.headtext h3{
+    font-size: 25px;
+    color: green;
+    font-family: Dosis;
+
+}
+.humans{
+    display: flex;
+    /* gap: 130px; */
+    text-align: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    height: auto;
+    width: auto;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+.human{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 29%;
+}
+
+@media (max-width: 1400px) {
+    .about{
+        display: flex;
+        justify-content: center;
+        align-items: space-between;
+        width: 100%;
+        margin-top: 20px;
+        height: auto;
+    }
+    .about h1{
+        font-size: 4vw;
+    }
+    .after{
+        flex-direction: column;
+    }
+    .text{
+        width: 90%;
+        text-align: center;
+    }
+    .buttons{
+        justify-content: center;
+    }
+    .buttons button{
+        font-size: 15px;
+    }
+    .buttons a{
+        font-size: 15px;
+    }
+    .img{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: 60px;
+    }
+    .img img{
+        width: 500px;
+        height: 520px;
+    }
+    .humans{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 35px;
+    }
+    .human{
+        width: 35%;
+    }
+}
+@media (max-width: 1100px) {
+    .about{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .after{
+        flex-direction: column;
+    }
+    .text{
+        width: 90%;
+        text-align: center;
+    }
+    .buttons{
+        justify-content: center;
+    }
+    .humans{
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+    }
+    .human{
+        width: 90%;
+    }
+}
+@media (max-width: 768px){
+    .about h1{
+        font-size: 7vw;
+    }
+    .img img{
+        width: 400px;
+        height: 420px;
+    }    
+    .human{
+        width: 80%;
+    }
+    .humans{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px;
+    }
+    .footer-container {
+        /* flex-direction: column; */
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icon {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info p{
+        font-size: 20px;
+        margin: -15px 0;
+    }
+
+}
+
+
+.humimg1{
+    border-radius: 20%;
+    width: 280px;
+    height: 300px;
+    background: url("imgs/NASA-Astronaut-Jonny-Kim.webp");
+    background-position: center;
+    background-size: cover;
+}
+.humimg2{
+    border-radius: 20%;
+    width: 280px;
+    height: 300px;
+    background: url("imgs/NASA-Astronaut-Matthew-Dominick-777x971.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.humimg3{
+    border-radius: 20%;
+    width: 280px;
+    height: 300px;
+    background: url("imgs/NASA-Astronaut-Stephanie-Wilson-1229x1536.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.info-holder{
+    width: 80%;
+}
+.human h2{
+    font-weight: 400;
+    color: rgb(162, 198, 228);
+    font-size: 30px;
+    font-family:  Italiana;
+    font-weight: 600;
+    margin: 15px 0;
+    text-shadow: #012f64;
+}
+.human button{
+    color: aliceblue;
+    padding: 9px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #FFF;
+    width: 60%;
+    background: none;
+    letter-spacing: 1.3px;
+}
+.human p{
+    letter-spacing: 1.3px;
+    font-size: 17px;
+    font-family: Dosis;
+    width: 100%;
+}
+.human button:hover{
+    background-color: #ffffff;
+    color: rgb(11, 11, 66);
+    transition: 0.5s;
+}
+
+
+
+
+.join{
+    display: flex;
+    justify-content: space-around;
+    background: url("imgs/1328086_1.png");
+    background-position: center;
+    background-size: cover;
+    padding: 100px 15px 100px 15px;
+    width: 100%;
+    color: aliceblue;
+}
+.jointext p{
+    font-size: 20px;
+    text-align:start;
+    font-weight: 700;
+    color: rgb(184, 182, 182);
+}
+.jointext h1{
+    font-weight: 500;
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family:  "Abril Fatface", serif;
+    letter-spacing: 2px;
+}
+.joinbtn button{
+    margin-top: 18px;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 26px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-weight: 535;
+    border: white 3px solid;
+    font-family: Roboto Slab;
+    background: none;
+}
+.joinbtn button:hover{
+    background-color: aliceblue;
+    color: black;
+    transition: all 0.8s;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+
+.fotoline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 10px;
+    flex-wrap: wrap; 
+    width: 80%;
+}
+
+.astrodiv {
+    background-color: #012f64;
+    height: 320px;
+    flex: 1 1 calc(20% - 10px); 
+    max-width: 296.5px;
+    background-position: center;
+    background-size: cover;
+}
+
+.ast1 {
+    background-image: url("imgs/Slice_1_1.png");
+}
+.ast2 {
+    background-image: url("imgs/Slice_2_1.png");
+}
+.ast3 {
+    background-image: url("imgs/Slice_3_1.png");
+}
+.ast4 {
+    background-image: url("imgs/Slice_4_1.png");
+}
+.ast5 {
+    background-image: url("imgs/Slice_5_1.png");
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .astrodiv {
+        flex: 1 1 calc(33.33% - 10px); 
+        max-width: 300px; 
+        height: 250px; 
+    }
+} */
+
+
+
+/* footer */
+
+footer{
+    font-family: Roboto Slab;
+    margin-top: 200px;
+}
+.news-footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 80%;
+}
+
+.newsletter {
+    flex: 1;
+    min-width: 300px;
+}
+
+.newsletter h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    width: 30%;
+}
+
+.newsletter button:hover {
+    background-color: #0d2846;
+    color: #FFF;
+    transition: 0.6s;
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.links-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.links-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000000;
+    letter-spacing: 1.3px;
+}
+
+.links-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links-column ul li {
+    margin-bottom: 10px;
+}
+
+.links-column ul li a {
+    color: #343535;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.links-column ul li a:hover {
+    color: #012f64;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000000;
+    letter-spacing: 1.3px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.social-media {
+    flex: 1;
+    min-width: 250px;
+}
+
+.social-media h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000000;
+    letter-spacing: 1.3px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    color: #000000;
+    text-decoration: none;
+    background: none;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #0d2846;
+    color: #FFF;
+    transition: 1s;
+}
+input{
+    border: 1px solid black
+}
+
+
+

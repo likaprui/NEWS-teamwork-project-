@@ -39,6 +39,7 @@ for(let j=0; j<circles.length; j++){
 updateSlider()
 
 
+// drop-down pages
 const newsA=document.getElementById("news-a")
 const newsTypesList=document.getElementById("news-types")
 
@@ -56,7 +57,7 @@ newsA.addEventListener("click", function(e){
 
 
 async function fetchAPI() {
-    const response = await fetch("https://newsapi.org/v2/everything?q=tesla&from=2024-09-21&sortBy=publishedAt&apiKey=69a73cba10144226a49cf73310e98629")
+    const response = await fetch("https://newsapi.org/v2/everything?q=tesla&from=2024-09-27&sortBy=publishedAt&apiKey=69a73cba10144226a49cf73310e98629")
     const data = await response.json()
     get(data)
 }

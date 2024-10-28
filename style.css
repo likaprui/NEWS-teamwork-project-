@@ -613,8 +613,7 @@ b{
     grid-template-rows:  40px 40px 40px 40px 40px 40px 40px 40px;
     gap: 20px;
 }
-.griddiv{
-}
+
 #grid-div1{
     grid-row: 1/8;
     grid-column: 1/2;
@@ -1201,8 +1200,7 @@ b{
         grid-template-rows: auto;
     }
 
-    .griddiv{
-    }
+
     #grid-div1{
         grid-row: 1/6;
         grid-column: 1/5;

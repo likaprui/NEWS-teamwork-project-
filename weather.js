@@ -1,3 +1,18 @@
+const newsA=document.getElementById("news-a")
+const newsTypesList=document.getElementById("news-types")
+
+newsA.addEventListener("click", function(e){
+    e.preventDefault();
+
+    if(newsTypesList.classList.contains("show")){
+        newsTypesList.classList.remove("show")
+        newsA.classList.remove("open")
+    }else{
+        newsTypesList.classList.add("show")
+        newsA.classList.add("open")
+    }
+})
+
 // menu
 let menu=document.getElementById("menu")
 let navbar=document.getElementsByTagName("nav")[0]
@@ -20,21 +35,8 @@ window.addEventListener('resize', ()=>{
     }
 })
 
-// a News tag drop-down
-const newsA=document.getElementById("news-a")
-const newsTypesList=document.getElementById("news-types")
 
-newsA.addEventListener("click", function(e){
-    e.preventDefault();
-
-    if(newsTypesList.classList.contains("show")){
-        newsTypesList.classList.remove("show")
-        newsA.classList.remove("open")
-    }else{
-        newsTypesList.classList.add("show")
-        newsA.classList.add("open")
-    }
-})
+// main
 
 document.addEventListener("DOMContentLoaded", () => {
     const defaultLat = 41.7151;

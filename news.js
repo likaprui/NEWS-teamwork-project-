@@ -1,3 +1,18 @@
+const newsA=document.getElementById("news-a")
+const newsTypesList=document.getElementById("news-types")
+
+newsA.addEventListener("click", function(e){
+    e.preventDefault();
+
+    if(newsTypesList.classList.contains("show")){
+        newsTypesList.classList.remove("show")
+        newsA.classList.remove("open")
+    }else{
+        newsTypesList.classList.add("show")
+        newsA.classList.add("open")
+    }
+})
+
 // menu
 let menu=document.getElementById("menu")
 let navbar=document.getElementsByTagName("nav")[0]
@@ -103,9 +118,12 @@ const filterButtons = [
 filterButtons.forEach(button => {
     document.getElementById(button.id).addEventListener('click', () => {
         // Reset userLocation to the default before adding the new filter
-        userLocation = `Georgia AND Tbilisi NOT state NOT Atlanta AND ${button.query}`;
+        const filteredLocation = `${userLocation} AND ${button.query}`;
 
-        NewsApi(userLocation)
+        document.getElementById('location-news-div').style.display= "block";
+        document.getElementById('usersArticlesSection').style.display= "none";
+
+        NewsApi(filteredLocation)
             .then((data) => {
                 displayNews(data);
             })
@@ -135,9 +153,11 @@ document.getElementById('fetch-location-news-btn').addEventListener('click', () 
     const locationInput = document.getElementById('location-news').value.trim();
     const button = document.getElementById('fetch-location-news-btn');
 
-    if (locationInput) {
-        userLocation = locationInput;
+    userLocation = locationInput.toLowerCase() === 'georgia' 
+        ? "Georgia AND Tbilisi NOT state NOT Atlanta" 
+        : locationInput;
 
+    if (userLocation) {
         addSpinner(button);
 
         NewsApi(locationInput)
@@ -152,4 +172,92 @@ document.getElementById('fetch-location-news-btn').addEventListener('click', () 
     } else {
         console.log('Please enter a valid location');
     }
+
+    if (locationInput.toLowerCase() !== "georgia" && locationInput.toLowerCase() !== "tbilisi") {
+        document.getElementById("usersArticlesSection").style.display = 'none';
+        document.getElementById("openModal").style.display = 'none';
+        document.getElementById("usersNews").style.display = 'none';
+    } else {
+        document.getElementById("usersArticlesSection").style.display = 'block';
+        document.getElementById("openModal").style.display = 'block';
+        document.getElementById("usersNews").style.display = 'block';
+    }
+});
+
+// user articles
+function saveArticlesToLocalStorage(articles) {
+    localStorage.setItem('articles', JSON.stringify(articles));
+}
+
+function loadArticlesFromLocalStorage() {
+    const articles = JSON.parse(localStorage.getItem('articles')) || [];
+    return articles;
+}
+
+function renderArticles(articles) {
+    const articlesContainer = document.getElementById('usersArticlesContainer');
+    articlesContainer.innerHTML = '';
+
+    articles.forEach(article => {
+        const articleCard = document.createElement('div');
+        articleCard.className = 'users-article-card';
+        articleCard.innerHTML = `
+            ${article.imageUrl ? `<img src="${article.imageUrl}" alt="Article Image">` : ''}
+            <h3>${article.title}</h3>
+            <p>${article.text}</p>
+            <p><strong>Author:</strong> ${article.author}</p>
+        `;
+        articlesContainer.appendChild(articleCard);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const articles = loadArticlesFromLocalStorage();
+    renderArticles(articles);
+});
+
+document.getElementById('openModal').addEventListener('click', function() {
+    document.getElementById('articleModal').style.display = 'flex';
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('articleModal').style.display = 'none';
+});
+
+document.getElementById('saveArticle').addEventListener('click', function() {
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const email = document.getElementById('email').value;
+    const text = document.getElementById('text').value;
+    const imageUrl = document.getElementById('image').value;
+
+    if (!title || !author || !email || !text || !imageUrl) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+    const articles = loadArticlesFromLocalStorage();
+
+    const newArticle = {
+        title,
+        author,
+        email,
+        text,
+        imageUrl
+    };
+
+    articles.push(newArticle);
+
+    saveArticlesToLocalStorage(articles);
+
+    renderArticles(articles);
+
+    document.getElementById('articleForm').reset();
+
+    document.getElementById('articleModal').style.display = 'none';
+});
+
+document.getElementById('usersNews').addEventListener('click', function() {
+    document.getElementById('location-news-div').style.display= "none";
+    document.getElementById('usersArticlesSection').style.display= "block";
 });

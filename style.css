@@ -61,6 +61,7 @@ nav{
     width: 900px;
     justify-content: space-around;
     visibility: visible;
+    font-family: Playfair Display;
 }
 
 chevron-down-outline{
@@ -456,7 +457,7 @@ b{
     margin-top: 60px;
     line-height: 2.4rem;
     text-align: start;
-    width: 600px;
+    width: 80%;
     word-spacing: 3px;
     font-family: Lato;
 }

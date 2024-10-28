@@ -1,25 +1,3 @@
-// menu
-let menu=document.getElementById("menu")
-let navbar=document.getElementsByTagName("nav")[0]
-
-menu.addEventListener("click", ()=>{
-    if(navbar.style.visibility==="hidden"){
-        navbar.style.visibility="visible";
-    }
-    else{
-        navbar.style.visibility="hidden"
-        
-    }
-})
-
-window.addEventListener('resize', ()=>{
-    if(window.innerWidth>640){
-        navbar.style.visibility="visible"
-    }else{
-        navbar.style.visibility="hidden"
-    }
-})
-
 // a News tag drop-down
 const newsA=document.getElementById("news-a")
 const newsTypesList=document.getElementsByClassName("news-types")[0]
@@ -67,6 +45,10 @@ aContact.addEventListener("click", ()=>{
     contactPage.style.display="flex"
     mainPort.innerHTML=""
     mainPort.appendChild(contactPage)
+    mainPort.style.justifyContent="center"
+    mainPort.style.alignItems="center"
+    mainPort.style.backgroundColor="#F2EDE6"
+    mainPort.style.borderColor="#000"
     console.log("jj")
 })
 

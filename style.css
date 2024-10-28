@@ -682,7 +682,7 @@ b{
     white-space: nowrap;
 }
 .item1 {
-    animation-delay: calc(10s / 3 * 0);
+    animation-delay: calc(10s / 3 * 2);
 }
 
 .item2 {
@@ -690,7 +690,7 @@ b{
 }
 
 .item3 {
-    animation-delay: calc(10s / 3 * 2);
+    animation-delay: calc(10s / 3 * 0);
 }
 
 .title{
@@ -702,9 +702,13 @@ b{
 }
 .title h2{
     font-size: 40px;
-    width: 200px;
+    width: 250px;
     font-family: Italiana;
     font-weight: 600;
+    border: 1px solid black;
+    padding: 60px;
+    border-radius: 60%;
+    text-align: center;
 }
 .line{
     border: 1px solid #000;
@@ -1472,35 +1476,4 @@ b{
         width: 100%;
         height: auto;
     }
-}
-
-
-/* user blog styles */
-
-.userBlog-main{
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 100px;
-    height: auto;
-    width: 80%;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    margin-bottom: 90px;
-    position: relative;
-}
-.txt{
-    position: absolute;
-    top: -900px;
-    left: 0;
-    background-color: red;
-    width: 420px;
-    font-family: Lato;   
-    font-weight: 300;
-    
-}
-#note{
-    width: 50%;
-    height: 50%;
 }

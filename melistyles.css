@@ -8,6 +8,10 @@
 /* weather font */
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
 
+/* Lato for community section*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* italiana */
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 *{
     margin: 0;
@@ -24,6 +28,7 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: #F2EDE6;
+    font-family: Lato;
 }
 
 /* ----------------------- header ---------------------- */
@@ -143,7 +148,7 @@ a:hover{
     color: #000000;
     font-size: 16px;
     transition: background-color 0.2s ease, padding-left 0.2s ease;
-
+    text-align: start;
 }
 
 .news-types ul li:hover {
@@ -196,7 +201,7 @@ a:hover{
 }
 
 .contact {
-    width: 35%;
+    width: 32%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -455,7 +460,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: Dosis;
 
 }
@@ -466,7 +471,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding: 0;
 }
 
@@ -913,7 +918,7 @@ main {
 #fetch-weather-btn {
     margin-top: 20px;
     width: 200px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-weight: bold;
     background-image: linear-gradient(144deg,#dfcbed, #6df1ef 50%);
     border-radius: 8px;
@@ -948,7 +953,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     background-image: url(https://media.istockphoto.com/id/1335852418/vector/modern-world-map-made-of-lines-and-dots-on-dark-blue-background.jpg?s=612x612&w=0&k=20&c=XfJWcVZDH4MSZgS187PtdL3UNC00u4x6CQr2YQBSAzA=);
     background-repeat: no-repeat;
     background-size: cover;
@@ -961,28 +966,32 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     width: 60%;
     height: auto;
     position: relative;
 }
 
 #location-news-input-div h1 {
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     color: white;
     text-align: center;
     margin-bottom: 40px;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: 35px;
+    font-family: Lato;
+    letter-spacing: 1.4px;
 }
 
 #location-news-search input {
     padding: 18px;
     border: 1px solid gray;
-    border-radius: 1px;
+    border-radius: 5px;
     width: 100%;
     font-size: 18px;
+
 }
 
 #fetch-location-news-btn {
@@ -992,9 +1001,8 @@ main {
     width: auto;
     padding: 13px 23px;
     margin-top: 20px;
-    background: linear-gradient(135deg, #d066f9, #a84dc5, #7d3f98);
-    color: white;
-    border-radius: 18px;
+    background-image: linear-gradient(90deg, #D6E5FA, #38515e);    color: white;
+    border-radius: 5px;
     text-transform: uppercase;
     border: none;
     font-size: 15px;
@@ -1003,7 +1011,7 @@ main {
 }
 
 #fetch-location-news-btn:hover {
-    background: linear-gradient(135deg, #412B6D,#6086AE);
+    background-image: linear-gradient(90deg, #E5E6E4,#1A1C20);
     color: white;
 }
 
@@ -1020,7 +1028,8 @@ main {
     flex-wrap: wrap;
     align-items: center;
     margin-top: 30px;
-    font-family:  Roboto Slab;
+    /* font-family:  Roboto Slab; */
+    font-family: Lato;
     font-weight:400;
     gap: 20px;
 }
@@ -1205,7 +1214,9 @@ main {
     text-decoration: underline;
     text-decoration-color: #53dad5;
     cursor: pointer;
-    font-family:  Roboto Slab;
+    /* font-family:  Roboto Slab; */
+    font-family: Lato;
+
     font-weight:400;
 }
 
@@ -1221,7 +1232,7 @@ main {
     padding: 50px 0;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     border-radius: 5px;
     margin-top: 100px;
 }
@@ -1233,7 +1244,16 @@ main {
     gap: 30px;
     width: 80%;
 }
-
+@media (max-width: 1650px) {
+    .footer-container{
+        flex-wrap: wrap;
+    }
+    .social-media{
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+    }
+}
 .newsletter {
     flex: 1;
     min-width: 300px;
@@ -1513,7 +1533,7 @@ main {
 
         .news-footer {
             padding: 30px 0;
-            width: 100%;
+            width: 80%;
         }
         nav{
             visibility: visible;
@@ -1712,16 +1732,18 @@ main {
 
 .open-modal-btn {
     padding: 10px 20px;
-    background-color: #4a90e2;
-    color: white;
+    background-color: #f2eecf;
+    color: rgb(0, 0, 0);
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     font-size: 16px;
+    box-shadow: 0 0 5px black;
 }
   
 .open-modal-btn:hover {
-    background-color: #357abd;
+    background-color: #151515;
+    color: #FFF;
 }
   
 /* Modal */
@@ -1730,8 +1752,15 @@ main {
     flex-direction: column;
     align-items: center;
     margin-top:  40px;
+    font-family: Italiana;
+    color: "#000";
+    font-weight: 700;
 }
-
+.modal h2{
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 550;
+}
 .modal {
     display: none;
     position: fixed;
@@ -1743,13 +1772,15 @@ main {
     justify-content: center;
     align-items: center;
     overflow: auto;
+    /* font-family: Lato; */
+
 }
   
 .modal-content {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
+    padding: 40px;
+    border-radius: 2px;
+    width: 40%;
     position: relative;
     max-height: 90vh;
     overflow-y: auto;
@@ -1758,9 +1789,9 @@ main {
 .close-btn {
     position: absolute;
     top: -7px;
-    right: 10px;
+    right: 20px;
     font-size: 54px;
-    color: #888;
+    color: #000000;
     cursor: pointer;
 }
   
@@ -1779,7 +1810,7 @@ form input, form textarea {
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 1px;
     font-size: 16px !important;
 }
 
@@ -1789,8 +1820,8 @@ form textarea {
 }
   
 .save-btn {
-    background-color: #4caf50;
-    color: white;
+    background-color: #e8d4b3;
+    color: rgb(19, 19, 19);
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -1798,10 +1829,12 @@ form textarea {
     margin-top: 15px;
     width: 133px;
     font-weight: bold;
+    font-family: Italiana;
 }
   
 .save-btn:hover {
-    background-color: #388e3c;
+    background-color: #000000;
+    color: #FFF;
 }
 
 /* Articles Section */
@@ -1843,10 +1876,12 @@ form textarea {
 .users-article-card h3 {
     color: #4a90e2;
     margin-bottom: 5px;
+    font-size: 40px;
 }
   
 .users-article-card p {
     margin: 5px 0;
+    font-size: 20px;
 }
   
 .users-article-card img {

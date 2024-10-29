@@ -146,7 +146,7 @@ a:hover{
     color: #000000;
     font-size: 16px;
     transition: background-color 0.2s ease, padding-left 0.2s ease;
-
+    text-align: start;
 }
 
 .news-types ul li:hover {
@@ -197,7 +197,7 @@ a:hover{
 }
 
 .contact {
-    width: 35%;
+    width: 32%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -299,7 +299,7 @@ b{
     color: #000;
     transition: 1s;
 }
-/* @media (max-width: 1750px) {
+@media (max-width: 1750px) {
     .contact-info{
         width: 90%;
         height: 120px;
@@ -324,9 +324,17 @@ b{
         height: auto;
     
     }
-} */
+    .social-media{
+        display: flex;
+        flex-direction: column;
+    }
+    .social-icons{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
-@media (max-width:1730px) {
+/* @media (max-width:1730px) {
 .contact-page{
     height: auto;
     padding-bottom: 40px;
@@ -360,7 +368,7 @@ b{
     height: auto;
 
 }
-}
+} */
 
 @media (max-width:1430px) {
 
@@ -389,6 +397,9 @@ b{
 
 
 @media (max-width:780px) {
+    main{
+        width: 100%;
+    }
     .imgDiv{
         display: none;
     }
@@ -996,6 +1007,12 @@ li {
     }
     .currency-rates{
         justify-content: center;
+    }
+    main{
+        width: 100%;
+    }
+    .news-footer{
+        width: 100%;
     }
 }
 

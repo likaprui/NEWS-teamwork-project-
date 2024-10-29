@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="melistyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -24,18 +25,10 @@
                 <a href="index.html">Home</a>
                 <div class="news-holder">
                     <a id="news-a">News<ion-icon name="chevron-down-outline"></ion-icon></a>
-
-                    <div class="news-types">
-
                     <div class="news-types" id="news-types">
                         <ul class="news-ul">
-
-
                             <li><a href="nasa.html">Nasa Daily</a></li>
-                            <li><a href="">Market Sales</a></li>
-                            <li><a href="#">Nasa Daily</a></li>
-                            <li><a href="currency.html">Currency Exchange</a></li>
-
+                            <li><a href="/">Currency Exchange</a></li>
                             <li><a href="blog.html">Blogs</a></li>
                         </ul>
                     </div>
@@ -47,7 +40,7 @@
                 <a href="#" id="a-contact">Contact</a>
             </nav>
         </div>
-    </header>
+    </header>   
 
     <main>
 
@@ -101,16 +94,17 @@
         <!---------------------->
 
         <section id="location-news-search">
-            <div id="locations-news-search-header">
-                <div id="location-news-input-div">
-                    <h1>Search for locational news around the world</h1>
+            <div id="locations-news-search-header" >
+                <div id="location-news-input-div" data-aos="fade-up"
+                data-aos-duration="3000">
+                    <h1>Search For Locational News Around The World</h1>
                     <input type="text" name="location-news" id="location-news" placeholder="Enter location:">
                     <button id="fetch-location-news-btn">Search</button>
                 </div>
             </div>
             <div id="news-categories-container">
                 <div>
-                    <h2>Popular categories</h2>
+                    <h2>Popular Categories</h2>
                 </div>
                 <div id="news-category-btn-div">
                     <button id="usersNews">Users' News</button>
@@ -249,5 +243,9 @@
     <script src="news.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>

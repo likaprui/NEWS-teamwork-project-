@@ -496,8 +496,8 @@ main {
     height: 250px;
     border-radius: 4px;
     justify-content: space-around;
-    background-color: #c2f5ea;
-    color: black;
+    /* background-image: linear-gradient(315deg, #20DED3, #F6FBA2); */
+    background-image: linear-gradient(315deg, #E0FFFF, #0093AF);    color: black;
     box-shadow: 0px 4px 8px rgba(78, 197, 230, 0.263);
     letter-spacing: 1.3px;
 }
@@ -1458,8 +1458,7 @@ main {
 }
 
 .daily-toggle-button:hover, .hour-toggle-button:hover {
-    color: #25807D;
-}
+    background-image: linear-gradient(315deg, #E0FFFF, #0093AF);}
 
 .hidden-hour {
     display: none;

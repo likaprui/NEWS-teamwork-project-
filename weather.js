@@ -1,6 +1,5 @@
-// a News tag drop-down
 const newsA=document.getElementById("news-a")
-const newsTypesList=document.getElementsByClassName("news-types")[0]
+const newsTypesList=document.getElementById("news-types")
 
 newsA.addEventListener("click", function(e){
     e.preventDefault();
@@ -36,24 +35,9 @@ window.addEventListener('resize', ()=>{
     }
 })
 
-// contact page function
 
-let aContact=document.getElementById("a-contact")
-let mainPort=document.getElementsByTagName("main")[0]
-let contactPage=document.getElementsByClassName("contact-page")[0]
-aContact.addEventListener("click", ()=>{
-    contactPage.style.display="flex"
-    mainPort.innerHTML=""
-    mainPort.appendChild(contactPage)
-    mainPort.style.justifyContent="center"
-    mainPort.style.alignItems="center"
-    mainPort.style.backgroundColor="#F2EDE6"
-    mainPort.style.borderColor="#000"
-    console.log("jj")
-})
+// main
 
-
-// main code
 document.addEventListener("DOMContentLoaded", () => {
     const defaultLat = 41.7151;
     const defaultLon = 44.8271;

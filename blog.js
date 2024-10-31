@@ -121,13 +121,20 @@ let mainPort=document.getElementsByTagName("main")[0]
 let contactPage=document.getElementsByClassName("contact-page")[0]
 aContact.addEventListener("click", ()=>{
     contactPage.style.display="flex"
+    contactPage.style.width="90%"
+    document.body.style.backgroundColor="#F2EDE6"
+    document.body.style.overflow="auto"
+    document.body.height="110vh"
+    document.querySelector("main").paddingBottom="70px"
     mainPort.innerHTML=""
+    mainPort.style.borderRight="1px solid black"
+    mainPort.style.borderLeft="1px solid black"
+
     mainPort.appendChild(contactPage)
     console.log("jj")
     document.body.style.height="auto"
     document.querySelector("main").style.width="80%"
-    document.body.style.backgroundColor="#F2EDE6"
-    document.body.style.overflow="auto"
-    document.querySelector("main").paddingBottom="70px"
+    document.querySelector("header").style.borderBottom="1px solid black"
+
 
 })

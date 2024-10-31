@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ვალუტის კურსები</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="currency.css">
 </head>
 <body>
@@ -190,7 +191,8 @@
             <p class="p100">$</p>
         </div>
         <div class="main-div">
-            <h1 class="currency-h1">Global Currency Converter</h1>
+            <h1 class="currency-h1" data-aos="fade-up"
+            data-aos-duration="3000">Global Currency Converter</h1>
             <section class="currency-rates">
                 <div class="currency-box">
                     <h3>$ USD</h3>
@@ -418,6 +420,10 @@
 
     <script src="currency.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

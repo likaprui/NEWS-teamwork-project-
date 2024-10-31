@@ -147,7 +147,7 @@ a:hover{
     color: #000000;
     font-size: 16px;
     transition: background-color 0.2s ease, padding-left 0.2s ease;
-
+    text-align: start;
 }
 
 .news-types ul li:hover {
@@ -273,7 +273,7 @@ main{
 }
 
 .contact {
-    width: 35%;
+    width: 32%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1313,6 +1313,9 @@ b{
 
 
     @media (max-width: 773px) {
+        main{
+            width: 100%;
+        }
         .news-footer {
             padding: 30px 0;
             width: 100%;
@@ -1379,6 +1382,59 @@ b{
 }
 
 @media (max-width: 640px) {
+
+    header{
+        width: 90%;
+    }
+    .header-div{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        position: relative;
+        width: 90%;
+    }
+    .h1-main{
+        left: 15%;
+    }
+    #menu{
+        display: block;
+    }
+    .header-div nav{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        position: absolute;
+        bottom: -280px;
+        z-index: 11111111111111111111;
+        right: -30px;
+        background-color: #fff;
+        visibility: hidden;
+        padding-top: 10px ;
+    }
+    nav a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 10px;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+    }
+    .news-holder{
+        width: 100%;
+    }
+    #news-a{
+        width: 100%;
+    }
+    a:after{
+        bottom: -1px;
+
+    }
+    .header-div nav a:hover {
+        background-color: #e0dddd;
+        padding-left: 25px; 
+        cursor: pointer;
+    }
     .main-slider{
         height: 30vh;
     }
@@ -1415,11 +1471,14 @@ b{
 @media (max-width: 480px) {
 
     .h1-main h1 {
-        font-size: 50px;
+        font-size: 40px;
+        text-transform: uppercase;
+        color: rgb(243, 237, 237);
     }
 
     .h1-main h2 {
         font-size: 18px;
+        display: none;
     }
 
     .circle-box {

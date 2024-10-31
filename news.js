@@ -1,3 +1,4 @@
+// drop-down menu
 const newsA=document.getElementById("news-a")
 const newsTypesList=document.getElementById("news-types")
 
@@ -13,6 +14,32 @@ newsA.addEventListener("click", function(e){
     }
 })
 
+// contact page function
+let aContact=document.getElementById("a-contact")
+let mainPort=document.getElementsByTagName("main")[0]
+let contactPage=document.getElementsByClassName("contact-page")[0]
+aContact.addEventListener("click", ()=>{
+    contactPage.style.display="flex"
+    contactPage.style.width="90%"
+    document.body.style.backgroundColor="#F2EDE6"
+    mainPort.style.backgroundColor="#F2EDE6"
+    document.body.style.overflow="auto"
+    document.body.height="110vh"
+    document.querySelector("main").paddingBottom="70px"
+    mainPort.innerHTML=""
+    mainPort.style.display="flex"
+    mainPort.style.alignItems="center"
+    mainPort.style.borderRight="1px solid black"
+    mainPort.style.borderLeft="1px solid black"
+
+    mainPort.appendChild(contactPage)
+    console.log("jj")
+    document.body.style.height="auto"
+    document.querySelector("main").style.width="80%"
+    document.querySelector("header").style.borderBottom="1px solid black"
+
+
+})
 // menu
 let menu=document.getElementById("menu")
 let navbar=document.getElementsByTagName("nav")[0]
@@ -206,6 +233,7 @@ function loadArticlesFromLocalStorage() {
     const articles = JSON.parse(localStorage.getItem('articles')) || [];
     return articles;
 }
+// localStorage.clear()
 
 function renderArticles(articles) {
     const articlesContainer = document.getElementById('usersArticlesContainer');
@@ -273,4 +301,5 @@ document.getElementById('saveArticle').addEventListener('click', function() {
 document.getElementById('usersNews').addEventListener('click', function() {
     document.getElementById('location-news-div').style.display= "none";
     document.getElementById('usersArticlesSection').style.display= "block";
+
 });

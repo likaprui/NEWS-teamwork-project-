@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="nasa.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,7 +15,7 @@
             </div>
             <ion-icon id="menu" name="grid-outline"></ion-icon>
             <nav>
-                <a href="">Home</a>
+                <a href="index.html">Home</a>
                 <div class="news-holder">
                     <a id="news-a">News<ion-icon name="chevron-down-outline"></ion-icon></a>
                     <div class="news-types" id="news-types">
@@ -112,7 +113,8 @@
             
             <div class="planets">
                 
-                <div class="Daily-nasa">
+                <div class="Daily-nasa" data-aos="fade-up"
+                data-aos-anchor-placement="center-bottom">
                     <div class="planetimg" id="planetimg">
                         <!-- <img src="" alt="" id="foto"> -->
                     </div>
@@ -152,7 +154,8 @@
                 
             </div> -->
 
-            <div class="stars">
+            <div class="stars"  data-aos="fade-up"
+            data-aos-duration="3000">
                 <div class="startext">
                     <p>Fueling the Future</p>
                     <h1>Reaching for the Stars</h1>
@@ -175,7 +178,8 @@
                 </div>
             </div>
 
-            <div class="zpatern">
+            <div class="zpatern" data-aos="fade-up"
+            data-aos-duration="3000">
                     <section class="card" id="section1">
                         <div class="info">
                             <h1>Rockets</h1>
@@ -236,7 +240,7 @@
                 
             </div>
             
-            <div class="NewsDetalize">
+            <div class="NewsDetalize" data-aos="zoom-in" data-aos-duration="2000">
                 <div>                
                     <h1></h1>
                     <p class="details"></p>
@@ -245,7 +249,8 @@
                 <img id="details-img" >
             </div>
 
-            <div class="nasa-project-container">
+            <div class="nasa-project-container" data-aos="fade-up"
+            data-aos-duration="5000">
                 <h1>NASA Project Filter</h1>
                 <input type="text" id="projectInput" placeholder="Enter project name...">
                 <button id="Search">Search</button>
@@ -253,7 +258,8 @@
             </div>
 
             
-            <div class="course">
+            <div class="course" data-aos="fade-up"
+            data-aos-duration="3000">
                 <div class="headtext">
                     <h3>Iluminating the Way</h3>
                     <h1>Charting the Course</h1>
@@ -391,5 +397,10 @@
         <script src="nasa.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            AOS.init();
+          </script>
 </body>
 </html>

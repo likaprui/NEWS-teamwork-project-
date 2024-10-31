@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -88,7 +89,8 @@
 
         <div class="main-slider">
             <img src="slider-img/social.png" alt="" width="100%" height="100%" id="mainSliderImg">
-            <div class="h1-main">
+            <div class="h1-main" data-aos="fade-up"
+            data-aos-duration="3000">
                 <h1>Stay updated</h1>
                 <h2> With The Latest Developments From Across The World. Our Team Of Reporters Brings You Live Updates From Every Corner Of The Globe</h2>
             </div>
@@ -103,21 +105,23 @@
             <div class="community">
                 <div class="empty-div"></div>
                 <div class="full-div">
-                    <h1>A Community At Work</h1>
-                    <div class="full-div-innerContainer">
+                    <h1 data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom">A Community At Work</h1>
+                    <div class="full-div-innerContainer" data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom">
                         <div class="circle-div">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, reprehenderit, iste blanditiis a illo veniam suscipit molestiae explicabo nemo rerum quidem architecto</p>
+                            <p> Join us as we navigate the ever-changing landscape of news and information—together, we create a well-informed community.</p>
                         </div>
                         <div class="square">
                             <span><img src="icons/3d 1.png" alt=""></span>
                             <h2>Our Mission</h2>
-                            <p>At NEWS, our mission is to deliver accurate, timely, and insightful news that empowers our readers. We are dedicated to fostering informed communities through quality journalism that highlights diverse perspectives and encourages civic engagement.</p>
+                            <p>At NEWS, our mission is to deliver accurate, timely, and insightful news that empowers our readers. We are dedicated to fostering informed communities through quality journalism that highlights.</p>
                             <a href="">Learn more <span class="line"></span></a>
                         </div>
                         <div class="square">
                             <span><img src="icons/3d 2.png" alt=""></span>
                             <h2>Who We Are</h2>
-                            <p>Founded in 2001, NEWS is comprised of a passionate team of journalists and contributors committed to integrity and transparency. We cover a wide range of topics, including local news, politics, culture, and technology, ensuring our audience stays informed about the issues that matter most. We value your voice and invite you to join the conversation.</p>
+                            <p>Founded in 2001, NEWS is comprised of a passionate team of journalists. We cover a wide range of topics, including local news, politics, culture, and technology, our audience stays informed about the issues that matter most.</p>
                             <a href="">Learn more <span class="line"></span></a>
                         </div>
                     </div>
@@ -126,23 +130,30 @@
         <section class="home-section">
 
             <div class="grid-example">
-                <div class="griddiv" id="grid-div1">
+                <div class="griddiv" id="grid-div1" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
 
                 </div>
-                <div class="griddiv" id="grid-div2">
+                <div class="griddiv" id="grid-div2" data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500">
 
                 </div>
-                <div class="griddiv" id="grid-div3"> 
+                <div class="griddiv" id="grid-div3" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine"> 
                         <h2 class="item item1">EVERYTHING YOU</h2>
                         <h2 class="item item2">NEED TO KNOW</h2>
                         <h2 class="item item3">ALL IN 1 PLACE</h2>
                 </div>
-                <div class="griddiv" id="grid-div4">
+                <div class="griddiv" id="grid-div4" data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom">
 
                 </div>
             </div>
 
-            <div class="title"><h2>About All</h2><div class="line"></div></div>
+            <div class="title" ><h2>About All</h2><div class="line"></div></div>
 
             <div class="about">
                 <hr style="border-color: black;">
@@ -285,6 +296,11 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <script src="script.js"></script>
 </body>

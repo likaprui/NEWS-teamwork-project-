@@ -14,27 +14,12 @@ newsA.addEventListener("click", function(e){
 })
 
 // menu
-let menu=document.getElementById("menu")
-let navbar=document.getElementsByTagName("nav")[0]
+let menu = document.getElementById("menu")
+let navbar = document.getElementsByTagName("nav")[0]
 
-menu.addEventListener("click", ()=>{
-    if(navbar.style.visibility==="hidden"){
-        navbar.style.visibility="visible";
-    }
-    else{
-        navbar.style.visibility="hidden"
-        
-    }
+menu.addEventListener("click", ()=> {
+    navbar.classList.toggle('visible');
 })
-
-window.addEventListener('resize', ()=>{
-    if(window.innerWidth>640){
-        navbar.style.visibility="visible"
-    }else{
-        navbar.style.visibility="hidden"
-    }
-})
-
 
 // main
 
@@ -243,6 +228,7 @@ function DailyApi(city, country) {
 
 const displayDailyWeather = (data) => {
     const weatherDiv = document.getElementById('daily-weather-div');
+    const dailyDiv = document.getElementById('daily-div');
     const city = data.city_name;
     const country = data.country_code;
     const weatherData = data.data;
@@ -280,22 +266,26 @@ const displayDailyWeather = (data) => {
         weatherDiv.appendChild(dayContainer);
     });
 
-    const toggleButton = document.createElement('button');
-    toggleButton.textContent = 'Show More';
-    toggleButton.classList.add('daily-toggle-button');
+    let toggleButton = dailyDiv.querySelector('.daily-toggle-button');
+    
+    if (!toggleButton) {
+        toggleButton = document.createElement('button');
+        toggleButton.textContent = 'Show More';
+        toggleButton.classList.add('daily-toggle-button');
 
-    toggleButton.addEventListener('click', () => {
-        const hiddenDays = document.querySelectorAll('.hidden-weather-day');
-        const isHidden = hiddenDays[0].style.display === 'none' || hiddenDays[0].style.display === '';
+        toggleButton.addEventListener('click', () => {
+            const hiddenDays = document.querySelectorAll('.hidden-weather-day');
+            const isHidden = hiddenDays[0].style.display === 'none' || hiddenDays[0].style.display === '';
 
-        hiddenDays.forEach((day) => {
-            day.style.display = isHidden ? 'flex' : 'none';
+            hiddenDays.forEach((day) => {
+                day.style.display = isHidden ? 'flex' : 'none';
+            });
+
+            toggleButton.textContent = isHidden ? 'Show Less' : 'Show More';
         });
 
-        toggleButton.textContent = isHidden ? 'Show Less' : 'Show More';
-    });
-
-    weatherDiv.appendChild(toggleButton);
+        dailyDiv.appendChild(toggleButton);
+    }
 };
 
 const createWeatherDayDiv = (day) => {

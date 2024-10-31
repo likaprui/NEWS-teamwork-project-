@@ -17,24 +17,9 @@ newsA.addEventListener("click", function(e){
 let menu=document.getElementById("menu")
 let navbar=document.getElementsByTagName("nav")[0]
 
-menu.addEventListener("click", ()=>{
-    if(navbar.style.visibility==="hidden"){
-        navbar.style.visibility="visible";
-    }
-    else{
-        navbar.style.visibility="hidden"
-        
-    }
+menu.addEventListener("click", ()=> {
+    navbar.classList.toggle('visible');
 })
-
-window.addEventListener('resize', ()=>{
-    if(window.innerWidth>640){
-        navbar.style.visibility="visible"
-    }else{
-        navbar.style.visibility="hidden"
-    }
-})
-
 
 // news API
 

@@ -60,7 +60,10 @@ nav{
     align-items: center;
     width: 700px;
     justify-content: space-around;
+    align-items: center;
+    width: auto;
     visibility: visible;
+    gap: 30px;
     font-family: Playfair Display;
 }
 
@@ -168,6 +171,65 @@ a:hover{
     transition: transform 0.3s ease;
 }
 
+@media (max-width: 940px) {
+    .header-div{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        position: relative;
+        width: 90%;
+    }
+    #menu{
+        display: block;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        width: 243px;
+        position: absolute;
+        top: 45px;
+        z-index: 11111111111111111111;
+        right: 2px;
+        background-color: #fff;
+        padding: 20px 0px;
+        opacity: 0;
+        visibility: hidden;
+        
+    }
+
+    nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease,
+    }
+    nav.visible a {
+        opacity: 1;
+        transition-delay: 0.1s;
+    }
+    .news-holder{
+        width: 100%;
+    }
+    #news-a{
+        width: 100%;
+    }
+    a:after{
+        bottom: -1px;
+
+    }
+    .header-div nav a:hover {
+        background-color: #e0dddd;
+        padding-left: 25px; 
+        cursor: pointer;
+    }
+}
 
 
 /* ----------------------- main ---------------------- */
@@ -928,6 +990,7 @@ b{
 
 .social-icons {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -1115,19 +1178,6 @@ b{
 }
 
 @media (max-width: 1200px) {
-    
-    header{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .header-div {
-        /* gap: 200px; */
-        max-width: 90%;
-    }
-    nav{
-        visibility: visible;
-    }
     .h1-main {
         top: 130px;
         left: 85px;
@@ -1302,9 +1352,6 @@ b{
         .news-footer {
             padding: 30px 0;
             width: 100%;
-        }
-        nav{
-            visibility: visible;
         }
         .footer-container {
             flex-direction: column;

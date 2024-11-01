@@ -131,12 +131,15 @@ let navbar=document.getElementsByTagName("nav")[0]
 menu.addEventListener("click", ()=>{
     if(navbar.style.visibility==="hidden"){
         navbar.style.visibility="visible";
+        navbar.classList.toggle('visible');
+
     }
     else{
-        navbar.style.visibility="hidden"
-        
+        navbar.style.visibility="hidden"    
+        navbar.classList.remove('visible');
     }
 })
+
 
 window.addEventListener('resize', ()=>{
     if(window.innerWidth>640){

@@ -58,12 +58,12 @@ nav{
     display: flex;
     text-align: center;
     align-items: center;
-    width: 700px;
+    width: 80%;
     justify-content: space-around;
     align-items: center;
     width: auto;
     visibility: visible;
-    gap: 30px;
+    gap: 70px;
     font-family: Playfair Display;
 }
 
@@ -185,7 +185,7 @@ a:hover{
     nav{
         display: flex;
         flex-direction: column;
-        width: 243px;
+        width: 443px;
         position: absolute;
         top: 45px;
         z-index: 11111111111111111111;
@@ -229,6 +229,8 @@ a:hover{
         padding-left: 25px; 
         cursor: pointer;
     }
+
+
 }
 
 
@@ -1281,8 +1283,10 @@ b{
     #grid-div2{
         grid-row: 6/9;
         grid-column: 1/3;
-        background-size: cover;
         background: url(grid-img/screen.jpg) no-repeat center center;
+        background-position: center;
+        background-size: cover;
+
     }
     
     #grid-div3{
@@ -1549,16 +1553,7 @@ b{
     header {
         padding: 10px;
     }
-    main{
-        border: none;
-    }
-    .contact-page{
-        width: 100%;
-        border: none;
-    }
-    .h1{
-        font-size: 45px;
-    }
+
     .logodiv {
         font-size: 25px;
     }

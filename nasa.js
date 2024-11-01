@@ -1,25 +1,25 @@
+
 // menu
-let menu=document.getElementById("menu")
-let navbar=document.getElementsByTagName("nav")[0]
+let menu = document.getElementById("menu");
+let navbar = document.getElementsByTagName("nav")[0];
 
-menu.addEventListener("click", ()=>{
-    if(navbar.style.visibility==="hidden"){
-        navbar.style.visibility="visible";
+menu.addEventListener("click", () => {
+    if (navbar.style.visibility === "hidden" || navbar.style.visibility === "") {
+        navbar.style.visibility = "visible"
+        navbar.classList.add('visible')
+    } else {
+        navbar.style.visibility = "hidden";
+        navbar.classList.remove('visible')
     }
-    else{
-        navbar.style.visibility="hidden"
-        
-    }
-})
+});
 
-window.addEventListener('resize', ()=>{
-    if(window.innerWidth>640){
-        navbar.style.visibility="visible"
-    }else{
-        navbar.style.visibility="hidden"
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navbar.style.visibility = "visible";
+    } else {
+        navbar.style.visibility = "hidden";
     }
-})
-
+});
 // news drop-down
 
 const newsA=document.getElementById("news-a")

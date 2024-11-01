@@ -40,9 +40,10 @@ header{
     color: #FFF;
 }
 .header-div{
-    width: 80%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .logodiv{
     font-size: 35px;
@@ -55,7 +56,7 @@ nav{
     display: flex;
     text-align: center;
     align-items: center;
-    width: 900px;
+    width: 700px;
     justify-content: space-around;
     visibility: visible;
 }
@@ -107,7 +108,7 @@ a:hover{
     position: absolute;
     top: 35px; 
     left: 0;
-    background-color: #F2EDE6;
+    background-color: #131927;
     border-radius: 5px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     width: 180px;
@@ -117,14 +118,13 @@ a:hover{
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
     z-index: 10; 
-    
 }
 
 .news-holder a {
     cursor: pointer; 
     font-size: 18px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fffdfd;
     display: flex;
     align-items: center;
     
@@ -139,19 +139,20 @@ a:hover{
     list-style: none;
 }
 
-.news-types ul li {
+.news-types ul li a{
     padding: 10px 20px;
-    color: #000000;
     font-size: 16px;
     transition: background-color 0.2s ease, padding-left 0.2s ease;
-    /* font-family: Roboto Slab; */
-    font-family:Playfair Display;
+    font-family: Roboto Slab;
+    /* font-family:Playfair Display; */
     text-align: start;
+    color: #FFF;
 }
 
-.news-types ul li:hover {
+.news-types ul li a:hover {
     background-color: #e0dddd;
     padding-left: 25px; 
+    color: #101d2b;
 }
 
 
@@ -167,8 +168,82 @@ a:hover{
     transform: rotate(180deg);
     transition: transform 0.3s ease;
 }
+.visible a:hover{
+    color: #131927 !important;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .header-div{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        position: relative;
+        width: 90%;
+    }
+    #menu{
+        display: block;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        width: 243px;
+        position: absolute;
+        top: 45px;
+        z-index: 11111111111111111111;
+        right: 2px;
+        background-color: #131927;
+        padding: 20px 0px;
+        opacity: 0;
+        visibility: hidden;
+        
+    }
+
+    nav.visible{
+        opacity: 1;
+        visibility: visible;
+        color: #ffffff !important;
+        padding-top: 17px;
+        padding-bottom: 0;
+    }
+
+    .visible a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        color: #ffffff !important;
+        padding: 10px;
+    }
+    nav.visible a {
+        opacity: 1;
+        transition-delay: 0.1s;
+    }
+    .news-holder{
+        width: 100%;
+    }
+    #news-a{
+        width: 100%;
+    }
+    a:after{
+        bottom: -1px;
+
+    }
+    nav.visible a:hover{
+        color: #131927;
+        
+    }
+    .visible a:hover {
+        background-color: #e0dddd;
+        padding-left: 25px; 
+        cursor: pointer;
+        color: #131927;
+    }
 
 
+}
 
 
 
@@ -266,11 +341,12 @@ main{
 
 .contact-page input[type="button"] {
     border-radius: 40px;
-    background-color: black;
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: #1b1f2d;
     font-size: 20px;
     letter-spacing: 1.3px;
     margin-top: 50px;
+    padding: 14px;
 }
 
 .contact-info{
@@ -312,9 +388,10 @@ b{
 }
 
 .contact-page input[type=button]:hover{
-    background-color: #e4d3d3;
+    background-color: #ededed;
     color: #000;
     transition: 1s;
+    box-shadow: 0 5px 10px black;
 }
 /* @media (max-width: 1750px) {
     .contact-info{
@@ -344,6 +421,9 @@ b{
 } */
 
 @media (max-width:1730px) {
+    .img{
+        margin-right: 150px;
+    }
 .contact-page{
     height: auto;
     padding-bottom: 40px;
@@ -380,11 +460,17 @@ b{
 }
 
 @media (max-width:1430px) {
-
+    .header-div{
+        width: 80%;
+    }
+    nav a{font-size: 18px;}
     .contact-page{
         height: auto;
         flex-direction: column;
         padding-bottom: 40px;
+    }
+    .img{
+        margin-right: 0;
     }
     .imgDiv {
         min-width: 100%;
@@ -1091,6 +1177,8 @@ b{
         margin: -15px 0;
     }
 
+
+
 }
 
 @media (max-width: 430px) {
@@ -1098,6 +1186,25 @@ b{
         width: 100%;
         border: none;
     }
+    .headtext h1{
+        font-size: 43px;
+        font-weight: 200;
+    }
+    .headtext p{
+        font-size: 24px;
+    }
+    .newsletter{
+        width: 95%;
+        min-width: 100px;
+    }
+
+    .newsletter form{
+        flex-direction: column;
+    }
+    .newsletter form input{
+        width: 100%;
+    }
+
 }
 .humimg1{
     border-radius: 20%;
@@ -1124,7 +1231,7 @@ b{
     background-size: cover;
 }
 .info-holder{
-    width: 80%;
+    width: 100%;
 }
 .human h2{
     font-weight: 400;
@@ -1164,21 +1271,23 @@ b{
     display: flex;
     justify-content: space-around;
     background: url("imgs/1328086_1.png");
+    filter: brightness(0.9);
     background-position: center;
     background-size: cover;
-    padding: 100px 15px 100px 15px;
+    padding: 100px 15px 100px 25px;
+    align-items: center;
     width: 100%;
     color: aliceblue;
 }
 .jointext p{
     font-size: 20px;
     text-align:start;
-    font-weight: 700;
-    color: rgb(184, 182, 182);
+    font-weight: 400;
+    color: rgb(206, 204, 204);
 }
 .jointext h1{
     font-weight: 500;
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 20px;
     font-family:  "Abril Fatface", serif;
     letter-spacing: 2px;
@@ -1190,7 +1299,7 @@ b{
     font-size: 26px;
     width: 100%;
     color: rgb(255, 255, 255);
-    font-weight: 535;
+    font-weight: 335;
     border: white 3px solid;
     font-family: Roboto Slab;
     background: none;
@@ -1280,7 +1389,7 @@ footer{
 
 .newsletter {
     flex: 1;
-    min-width: 300px;
+    min-width: 100px;
 }
 
 .newsletter h2 {
@@ -1308,7 +1417,7 @@ footer{
     border-radius: 5px;
     color: rgb(0, 0, 0);
     cursor: pointer;
-    width: 30%;
+    width: 40%;
 }
 
 .newsletter button:hover {

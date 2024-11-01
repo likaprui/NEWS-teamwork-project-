@@ -433,7 +433,65 @@ main{
     justify-content: center;
     align-items: center;
     z-index: 1;
+    position: relative;
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#loading {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    z-index: 1000; 
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.loading-content {
+    /* position: absolute;
+    top: 40%;
+    left: 43%; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+.loading-content p{
+    font-family: Playfair Display;
+    letter-spacing: 1.3px;
+}
+.loading-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #000000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .container{
     display: flex;
     flex-direction: row;
@@ -448,6 +506,22 @@ main{
 }
 .first-div{
     width: 40%;
+    position: relative;
+}
+#stop{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    padding: 30px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2EDE6;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    /* font-family: ; */
 }
 .second-div{
     display: flex;

@@ -896,6 +896,53 @@ main {
         width: 33px !important;
         height: 33px !important;
     }
+
+    .footer-container{
+        padding: 0;
+    }
+    .footer-container {
+        /* flex-direction: column; */
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icon {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info p{
+        font-size: 20px;
+        margin: -15px 0;
+    }
+    .newsletter{
+        text-align: start;
+    }
+    .newsletter form{
+        align-items: start;
+    }
+    .footer-link{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .social-media{
+        text-align: start;
+    }
+    .footer-links .contact-info p{
+        font-size: 16px;
+    }
+    .social-icons{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+    }
 }
 
 .hourly-weather-hour img {
@@ -1251,7 +1298,6 @@ main {
     .social-media{
         display: flex;
         flex-direction: column;
-        background-color: red;
     }
 }
 .newsletter {
@@ -1396,6 +1442,7 @@ main {
     }
     nav{
         visibility: visible;
+        width: 90%;
     }
     .h1-main {
         top: 150px;
@@ -1585,6 +1632,7 @@ main {
     
         .social-media {
             width: 100%;
+            margin-top: 100px;
         }
     
         .social-icons {
@@ -1685,7 +1733,9 @@ main {
     header {
         padding: 10px;
     }
-
+    nav{
+        left: 59%;
+    }
     .logodiv {
         font-size: 25px;
     }
@@ -1727,6 +1777,9 @@ main {
     .info-boxs {
         width: 100%;
         height: auto;
+    }
+    .news-footer{
+        width: 70%;
     }
 }
 

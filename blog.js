@@ -1,73 +1,102 @@
-let api = "https://api.apify.com/v2/datasets/BAAl8U55iEahx5b3h/items?clean=true&format=json";
+let api = "https://api.apify.com/v2/datasets/3eI0qgUa5tWUjRGhj/items?clean=true&format=json";
 
-let img1=document.getElementsByClassName("first-div")[0]
-let img2=document.getElementsByClassName("img")[0]
-let img3=document.getElementsByClassName("imgg")[0]
+let img1 = document.getElementsByClassName("first-div")[0];
+let img2 = document.getElementsByClassName("img")[0];
+let img3 = document.getElementsByClassName("imgg")[0];
 
-let mainDescription=document.getElementsByClassName("description")[0]
-let num=document.getElementsByClassName("number")[0]
+let mainDescription = document.getElementsByClassName("description")[0];
+let num = document.getElementsByClassName("number")[0];
 
-function fetchData(){
-  fetch(api)
-    .then(response => {
-      return response.json();
-    })
-  .then(data => {
-    Design(data);
-  });
+let intervalId;
+let isRunning = false
+let currentIndex = 0
+let data = []
+
+function fetchData() {
+    return fetch(api)
+        .then(response => response.json())
+        .then(fetchedData => {
+            data = fetchedData;
+            isRunning = true;
+            Design(data);
+        })
 }
 
+function Design(data) {
+    console.log(data);
+    currentIndex = 0
 
-function Design(data){  
-    console.log(data)
-    
-    let index=0
-
-    
-    const asyncFunc = setInterval( () => {
-      let obj = data[index]
-
-        if(Array.isArray(obj.images) && obj.images.length>=3){
-            console.log(obj)
-
-            let imgSrc1=obj.images[0]
-            let imgSrc2=obj.images[1]
-            let imgSrc3=obj.images[2]
-
-            img1.style.backgroundImage=`url(${imgSrc1})`
-            img2.style.backgroundImage=`url(${imgSrc2})`
-            img3.style.backgroundImage=`url(${imgSrc3})`
-
-            img1.style.backgroundSize="cover"
-            img2.style.backgroundSize="cover"
-            img3.style.backgroundSize="cover"
-
-            img1.style.backgroundPosition="cover"
-            img2.style.backgroundPosition="cover"
-            img3.style.backgroundPosition="cover"
-
-            let description=obj.caption
-            mainDescription.textContent=description
-            num.innerHTML=index
-
-            startAnimation()
+    intervalId = setInterval(() => {
+        if (currentIndex >= data.length) {
+            currentIndex = 0
         }
-        index= (index+1) % data.length;
-    }, 3000)
-        
-  }
-    
-function startAnimation(){
-  img1.classList.remove('animation')
-  img2.parentElement.classList.remove('animation')
-  img3.parentElement.classList.remove('animation')
 
-  setTimeout(()=>{
-    img1.classList.add('animation')
-    img2.parentElement.classList.add('animation')
-    img3.parentElement.classList.remove('animation')
-  })
+        let obj = data[currentIndex];
+
+        if (Array.isArray(obj.images) && obj.images.length >= 3) {
+            console.log(obj);
+            let defaultImg = "load.png";
+
+            let imgSrc1 = obj.images[0];
+            let imgSrc2 = obj.images[1];
+            let imgSrc3 = obj.images[2];
+
+            loadImage(imgSrc1, img1, defaultImg);
+            loadImage(imgSrc2, img2, defaultImg);
+            loadImage(imgSrc3, img3, defaultImg);
+
+            let description = obj.caption;
+            mainDescription.textContent = description;
+            num.innerHTML = currentIndex;
+            startAnimation();
+        }
+        currentIndex++; // Move to the next index
+    }, 3000);
 }
+
+function loadImage(src, element, defaultImg) {
+    const img = new Image();
+
+    img.src = src;
+
+    img.onload = function () {
+        element.style.backgroundImage = `url(${src})`;
+        document.getElementById("loading").style.display="none"
+
+    };
+    img.onerror = function () {
+        element.style.backgroundImage = `url(${defaultImg})`
+        document.getElementById("loading").style.display="none"
+
+    };
+
+    element.style.backgroundSize = "cover"
+    element.style.backgroundPosition = "center"
+}
+
+function startAnimation() {
+    img1.classList.remove('animation');
+    img2.parentElement.classList.remove('animation');
+    img3.parentElement.classList.remove('animation');
+
+    setTimeout(() => {
+        img1.classList.add('animation');
+        img2.parentElement.classList.add('animation')
+        img3.parentElement.classList.remove('animation')
+    });
+}
+
+document.getElementById("stop").addEventListener('click', () => {
+    if (isRunning) {
+        clearInterval(intervalId);
+        isRunning = false;
+        document.getElementById("stop").querySelector("img").src = "play.png";
+    } else {
+        isRunning = true
+        document.getElementById("stop").querySelector("img").src = "pause.png"
+        Design(data);
+    }
+});
 fetchData()
 
 
@@ -135,6 +164,4 @@ aContact.addEventListener("click", ()=>{
     document.body.style.height="auto"
     document.querySelector("main").style.width="80%"
     document.querySelector("header").style.borderBottom="1px solid black"
-
-
 })

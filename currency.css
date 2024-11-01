@@ -430,6 +430,31 @@ b{
     }
 }
 
+@media (max-width: 500px){
+    main{
+        width: 100%;
+    }
+    .h1{
+        font-size: 40px;
+    }
+    .contact-page{
+        width: 100%;
+        border: none;
+        padding: 0;
+    }
+    .contact-page form{
+        align-items: center;
+    }
+    .contact{
+        width: 100%;
+    }
+    .contact input[type="button"]{
+        padding: 10px;
+        width: 70%;
+        font-size: 16px;
+    }
+}
+
 /*  --------------------------- contact page---------------------------------------------------*/
 
 
@@ -942,7 +967,7 @@ li {
         flex-direction: column;
         gap: 10px;
         visibility: visible;
-
+        width: 90%;
     }
 }
 @media (max-width: 640px) {
@@ -1008,11 +1033,26 @@ li {
     .currency-rates{
         justify-content: center;
     }
+    .currency-h1{
+        font-size: 78px;
+        width: 100%;
+    }
     main{
         width: 100%;
     }
     .news-footer{
         width: 100%;
+    }
+    .newsletter form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .newsletter input{
+        width: 90%;
+    }
+    .newsletter button{
+        width: 40%;
     }
 }
 

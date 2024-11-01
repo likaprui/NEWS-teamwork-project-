@@ -34,6 +34,13 @@
         </div>
     </header>
     <main>
+        <div id="loading" style="display: block;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Loading...</p>
+            </div>
+        </div>
+
         <section class="contact-page">
             <div class="imgDiv"><img src="socials/contact-img.png"></div>
             
@@ -82,7 +89,9 @@
         </section>
 
         <div class="container">
-            <div class="row first-div"></div>
+            <div class="row first-div">
+                <button id="stop"><img src="pause.png"></button>
+            </div>
 
             <div class="row second-div">
                 <div class="blog-numeration">
@@ -119,6 +128,8 @@
     </main>
     <script src="blog.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
 </body>

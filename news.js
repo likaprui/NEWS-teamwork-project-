@@ -218,18 +218,18 @@ function saveArticlesToLocalStorage(articles) {
 }
 
 function loadArticlesFromLocalStorage() {
-    const articles = JSON.parse(localStorage.getItem('articles')) || [];
-    return articles;
+    const articles = JSON.parse(localStorage.getItem('articles')) || []
+    return articles
 }
 // localStorage.clear()
 
 function renderArticles(articles) {
     const articlesContainer = document.getElementById('usersArticlesContainer');
-    articlesContainer.innerHTML = '';
+    articlesContainer.innerHTML = ''
 
     articles.forEach(article => {
-        const articleCard = document.createElement('div');
-        articleCard.className = 'users-article-card';
+        const articleCard = document.createElement('div')
+        articleCard.className = 'users-article-card'
         articleCard.innerHTML = `
             ${article.imageUrl ? `<img src="${article.imageUrl}" alt="Article Image">` : ''}
             <h3>${article.title}</h3>
@@ -262,10 +262,10 @@ document.getElementById('saveArticle').addEventListener('click', function() {
 
     if (!title || !author || !email || !text || !imageUrl) {
         alert('Please fill in all required fields.');
-        return;
+        return
     }
 
-    const articles = loadArticlesFromLocalStorage();
+    const articles = loadArticlesFromLocalStorage()
 
     const newArticle = {
         title,
@@ -277,17 +277,17 @@ document.getElementById('saveArticle').addEventListener('click', function() {
 
     articles.push(newArticle);
 
-    saveArticlesToLocalStorage(articles);
+    saveArticlesToLocalStorage(articles)
 
     renderArticles(articles);
 
-    document.getElementById('articleForm').reset();
+    document.getElementById('articleForm').reset()
 
-    document.getElementById('articleModal').style.display = 'none';
+    document.getElementById('articleModal').style.display = 'none'
 });
 
 document.getElementById('usersNews').addEventListener('click', function() {
-    document.getElementById('location-news-div').style.display= "none";
+    document.getElementById('location-news-div').style.display= "none"
     document.getElementById('usersArticlesSection').style.display= "block";
 
 });

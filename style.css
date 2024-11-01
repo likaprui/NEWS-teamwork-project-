@@ -42,7 +42,7 @@ header{
     border-bottom: 1px solid black;
 }
 .header-div{
-    width: 80%;
+    width: 65%;
     display: flex;
     justify-content: space-between;
     /* gap: 500px; */
@@ -58,7 +58,7 @@ nav{
     display: flex;
     text-align: center;
     align-items: center;
-    width: 900px;
+    width: 700px;
     justify-content: space-around;
     visibility: visible;
     font-family: Playfair Display;
@@ -470,6 +470,9 @@ b{
     height: 90vh;
     position: relative;
 }
+.main-slider img{
+    filter: brightness(0.8);
+}
 .circle-box{
     position: absolute;
     bottom: 20px;
@@ -577,8 +580,24 @@ b{
     .community{
         height: 1300px;
     }
+    nav{
+        width: 80%;
+    }
+    nav a{
+        font-size: 16px;
+
+    }
+    #news-a {
+        font-size: 16px;
+
+    }
+
 }
 @media (max-width:1100px) {
+    .h1-main{
+        width: 90%;
+        margin-bottom: 20px;
+    }
     .community{
         height: 1600px;
         justify-content: center;
@@ -1110,9 +1129,9 @@ b{
         visibility: visible;
     }
     .h1-main {
-        top: 150px;
-        left: 100px;
-        width: 600px;
+        top: 130px;
+        left: 85px;
+        width: 80%;
     }
 
     .main-slider {
@@ -1166,7 +1185,7 @@ b{
         flex-direction: column;
         gap: 10px;
         visibility: visible;
-
+        width: 90%;
     }
 
     .main-slider {
@@ -1434,12 +1453,65 @@ b{
     .footer-container{
         padding: 0;
     }
+    .footer-container {
+        /* flex-direction: column; */
+        align-items: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icon {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info p{
+        font-size: 20px;
+        margin: -15px 0;
+    }
+    .newsletter{
+        text-align: start;
+    }
+    .newsletter form{
+        align-items: start;
+    }
+    .footer-link{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .social-media{
+        text-align: start;
+    }
+    .footer-links .contact-info p{
+        font-size: 16px;
+    }
+    .social-icons{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
 }
 @media (max-width: 480px) {
     header {
         padding: 10px;
     }
-
+    main{
+        border: none;
+    }
+    .contact-page{
+        width: 100%;
+        border: none;
+    }
+    .h1{
+        font-size: 45px;
+    }
     .logodiv {
         font-size: 25px;
     }
@@ -1448,6 +1520,16 @@ b{
         font-size: 16px;
     }
 
+    .contact form{
+        padding: 0;
+        width: 100%;
+        align-items: center;
+    }
+    .contact-page form input[type="button"]{
+        width: 70%;
+        font-size: 18px;
+        padding: 10px;
+    }
     .h1-main h1 {
         font-size: 40px;
         text-transform: uppercase;
@@ -1469,7 +1551,16 @@ b{
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
-
+    #grid-div4{
+        display: none;
+    }
+    #grid-div2{
+        grid-column: 1/5;
+        background-size: cover;
+    }
+    #grid-div3 .item{
+        font-size: 22px;
+    }
     .about {
         flex-direction: column;
         gap: 20px;
@@ -1477,10 +1568,43 @@ b{
 
     .about-div {
         width: 100%;
+        height: auto;
+    }
+    .about-div div{
+        height: 340px;
+    }
+    .title{
+        width: 90%;
+    }
+    .about-div{
+        width: 100%;
+        flex-direction: column;
+    }
+    .news{
+        width: 100%;
+    }
+    .news-divs{
+        width: 100%;
+    }
+
+    .news-divs h3{
+        font-size: 15px;
+        /* visibility: hidden; */
     }
 
     .info-boxs {
         width: 100%;
-        height: auto;
+        height: 200px;
+    }
+    .info-boxs h2{
+        width: 100%;
+        font-size: 19px;
+    }
+    .news-footer{
+        padding: 0px;
+    }
+    .footer-container{
+        width: 95%;
+        padding: 10px;
     }
 }

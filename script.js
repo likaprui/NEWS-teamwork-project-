@@ -57,7 +57,7 @@ newsA.addEventListener("click", function(e){
 
 
 async function fetchAPI() {
-    const response = await fetch("https://newsapi.org/v2/everything?q=tesla&from=2024-09-30&sortBy=publishedAt&apiKey=69a73cba10144226a49cf73310e98629")
+    const response = await fetch("https://newsapi.org/v2/everything?q=tesla&from=2024-10-05&sortBy=publishedAt&apiKey=69a73cba10144226a49cf73310e98629")
     const data = await response.json()
     get(data)
 }
